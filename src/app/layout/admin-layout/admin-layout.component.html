@@ -1,3 +1,52 @@
-<app-header-admin />
-<router-outlet />
-<app-footer-admin />
+<input type="checkbox" id="nav-toggle" />
+<div class="header-admin">
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <h1>
+        <span class="fas fa-desktop"></span> <span>Accusoft</span>
+      </h1>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li>
+          <a href="/admin">
+            <span class="fas fa-chart-line fa-sm icon"></span>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/admin">
+            <span class="fas fa-clipboard-list fa-lg icon"></span>
+            <span>Product</span>
+          </a>
+        </li>
+        <li>
+          <a href="/admin">
+            <span class="fas fa-users fa-sm icon"></span>
+            <span>User</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-content">
+    <header class="header-title">
+      <h2>
+        <label for="nav-toggle">
+          <span class="fas fa-bars"></span>
+        </label>
+      </h2>
+      <div class="header-title-user">
+        <img src="" width="40px" height="40px" alt="" />
+        <div>
+          <h4>Admin</h4>
+          <small>Super admin</small>
+        </div>
+      </div>
+    </header>
+    <main class="content">
+      <router-outlet />
+    </main>
+  </div>
+</div>
+
