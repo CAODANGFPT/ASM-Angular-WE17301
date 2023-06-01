@@ -1,0 +1,50 @@
+<div class="product-add">
+  <h1>Products edit</h1>
+  <form action="" class="form">
+    <div class="form-control">
+      <label for="">Name:</label>
+      <input type="text" class="name" />
+    </div>
+    <div class="form-control">
+      <label for="">Image:</label>
+      <div class="form-control-file">
+        <label for="image">
+          <i class="fa-solid fa-download"></i>
+        </label>
+        <p class="value">{{ valueInput }}</p>
+        <div>
+          <input
+            name="image"
+            (input)="setValue($event)"
+            class="form-control-file-image"
+            id="image"
+            type="file"
+            accept="image/png, image/jpg, image/gif, image/jpeg"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="">Price:</label>
+      <input type="number" class="price" min="0" />
+    </div>
+    <div class="form-control">
+      <label for="">Description:</label>
+      <textarea name="description" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div class="form-control">
+      <label for="">CategoryID:</label>
+      <select name="categoryId" id="">
+        <option value="1">Cate 1</option>
+        <option value="2">Cate 2</option>
+        <option value="3">Cate 3</option>
+        <option value="4">Cate 4</option>
+      </select>
+    </div>
+    <div class="form-control">
+      <div class="btn">
+        <input width="300px" class="btn-add" type="submit" value="Sửa" />
+      </div>
+    </div>
+  </form>
+</div>
