@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @mixin max-screen($break-point) {
   @media only screen and (max-width: $break-point) {
     @content;
@@ -12,7 +14,7 @@
   }
 }
 
-@mixin Flex($display, $justifyContent, $alignItems){
+@mixin Flex($display, $justifyContent, $alignItems) {
   display: $display;
   justify-content: $justifyContent;
   align-items: $alignItems;
