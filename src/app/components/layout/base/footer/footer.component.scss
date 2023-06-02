@@ -1,0 +1,262 @@
+@import "../../../../../../public/scss/utils/functions.scss";
+@import "../../../../../../public/scss/utils/variables.scss";
+footer {
+  background: $Cultured;
+  width: 100%;
+  border-bottom: #dedede 1px solid;
+  margin-top: 15px;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  border-top: rgb(224, 223, 223) solid 1px;
+}
+.top-footer {
+  width: 100%;
+  margin-top: 10px;
+  padding: 30px;
+  @include max-screen($s) {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    &-widget {
+      &-title {
+        z-index: 10;
+      }
+      &-content {
+        &-menu {
+          max-height: 0px;
+          overflow: hidden;
+          transition: max-height 0.5s ease-in-out;
+          padding-left: 10px;
+        }
+      }
+      &:hover {
+        .top-footer-widget-content-menu {
+          max-height: 160px;
+        }
+        .top-footer-title {
+          padding: 0;
+        }
+      }
+    }
+  }
+  @include min-screen($sm) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @include min-screen($lg) {
+    max-width: 950px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  @include min-screen($xxl) {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  &-widget {
+    &-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: $fontFamily;
+      margin-left: 8px;
+      margin-bottom: 0;
+      line-height: 1;
+      color: $CharlestonGreen;
+    }
+    &-content {
+      &-menu {
+        padding-left: 10px;
+        &-item {
+          list-style: none;
+          &-link {
+            position: relative;
+            text-decoration: none;
+            color: #000;
+            font-family: $fontFamily;
+            font-size: 0.9rem;
+            padding: 4px 0;
+            display: block;
+            transition: right linear 0.1s;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.mid-footer {
+  width: 100%;
+  margin-top: 10px;
+  @include max-screen($sm) {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    &-customer-content {
+      margin: 10px 0;
+      &-menu {
+        flex-wrap: wrap;
+      }
+      &-image {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &-col-info {
+      margin-bottom: 5px;
+    }
+  }
+  @include min-screen($lg) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    &-col-info {
+      margin-bottom: 5px;
+    }
+  }
+  &-payment-methods {
+    width: 50%;
+    @include max-screen($sm) {
+      width: 100%;
+    }
+    &-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: $fontFamily;
+      margin-left: 8px;
+      margin-bottom: 0;
+      line-height: 1;
+      color: $CharlestonGreen;
+    }
+    &-content {
+      margin-top: 10px;
+      ul {
+        @include max-screen($sm) {
+          display: flex;
+          flex-wrap: wrap;
+          padding-left: 8px;
+        }
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 0px;
+        list-style: none;
+        margin: 0 8px;
+        li {
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+  &-customer {
+    &-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: $fontFamily;
+      margin-left: 8px;
+      margin-bottom: 0;
+      line-height: 1;
+      color: $CharlestonGreen;
+    }
+    &-content {
+      display: flex;
+      margin: 10px;
+      &-menu {
+        display: flex;
+        li {
+          list-style: none !important;
+          margin: 0 10px;
+          p {
+            margin: 0;
+            color: $VenetianRed;
+            a {
+              text-decoration: none !important;
+              font-weight: 700;
+              font-size: 20px;
+              color: rgb(216, 2, 2);
+            }
+          }
+        }
+        &-separating-line {
+          background: $VenetianRed;
+          width: 1px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+.bottom-footer {
+  margin-left: 6px;
+  &-title {
+    margin: 30px 0 0 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: $fontFamily;
+    margin-left: 8px;
+    margin-bottom: 0;
+    line-height: 1;
+    color: $CharlestonGreen;
+  }
+  &-row {
+    margin: 10px;
+    width: 100%;
+    &-col-info {
+      p {
+        color: $VenetianRed;
+        font-size: 1em;
+      }
+    }
+    @include min-screen($lg) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      &-col-info {
+        margin-bottom: 5px;
+        width: 100%;
+      }
+    }
+    @include max-screen($sm) {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      &-col-info {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+.copyright {
+  width: 100%;
+  background: #363636;
+  display: flex;
+  justify-content: flex-start;
+  &-content {
+    margin-left: 77px;
+    line-height: 36px;
+    color: rgb(224, 222, 222);
+    font-size: 14px;
+    span {
+      margin: 0 2px;
+      a {
+        color: #ea4242;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+    @include max-screen($sm) {
+      display: grid;
+      margin-left: 10px;
+      &-dividing-line {
+        display: none;
+      }
+    }
+    @include min-screen($sm) {
+      display: flex;
+      margin-left: 30px;
+      &-dividing-line {
+        display: block;
+      }
+    }
+  }
+}
