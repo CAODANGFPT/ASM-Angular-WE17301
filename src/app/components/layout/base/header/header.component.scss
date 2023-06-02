@@ -27,6 +27,7 @@
         @include Size(12px, 400, 32px);
         color: $PhilippineGray;
         margin: 0;
+        font-family: $Geologica;
       }
       @include max-screen($xxl) {
         display: none;
@@ -42,24 +43,24 @@
         cursor: pointer;
       }
       .fa-facebook-f {
-        width: 33%;
-        font-size: 10px;
+        font-size: 15px;
+        padding: 10px 14px;
         &:hover {
           background-color: $SteelBlue;
           color: white;
         }
       }
       .fa-twitter {
-        width: 33%;
-        font-size: 10px;
+        font-size: 15px;
+        padding: 10px 12px;
         &:hover {
           background-color: $Azure;
           color: white;
         }
       }
-      .fa-google-plus-g{
-        width: 33%;
-        font-size: 10px;
+      .fa-google-plus-g {
+        font-size: 15px;
+        padding: 10px 10px;
         &:hover {
           background-color: $Cinnabar;
           color: white;
@@ -103,6 +104,7 @@
           a {
             color: $DarkSilver;
             text-decoration: none;
+            font-family: $Geologica;
             &:hover {
               color: $CarminePink;
             }
@@ -168,6 +170,7 @@
             @include Size(13px, 400, 1.7);
             color: $DarkSilver;
             text-decoration: none;
+            font-family: $Geologica;
             &:hover {
               color: $CarminePink;
             }
@@ -185,11 +188,11 @@
           width: fit-content;
           margin-left: 10px;
           .fa-cart-shopping {
-            font-size: 24px;
+            font-size: 20px;
             color: black;
             border: 1px solid black;
             border-radius: 50%;
-            padding: 6px 6px 5px 6px;
+            padding: 9px 8px 6px 6px;
           }
           p {
             @include Flex(flex, center, center);
@@ -198,8 +201,9 @@
             top: -10px;
             right: -10px;
             background-color: $CarminePink;
-            height: 1.8em;
-            width: 1.8em;
+            // height: 1.8em;
+            // width: 1.8em;
+            padding: 3px 8px;
             border-radius: 50%;
           }
         }
@@ -209,9 +213,10 @@
         padding: 0px;
         list-style: none;
         a {
-        @include Size(12px, 400, 32px);
+          @include Size(12px, 400, 32px);
           color: $DarkSilver;
           text-decoration: none;
+          font-family: $Geologica;
           &:hover {
             color: $CarminePink;
           }
@@ -294,6 +299,7 @@
             text-transform: uppercase;
             text-decoration: none;
             color: white;
+            font-family: $Geologica;
           }
           .fa-house {
             margin-right: 6px;
@@ -301,7 +307,7 @@
             line-height: 30px;
             color: white;
           }
-          .fa-caret-down{
+          .fa-caret-down {
             margin-left: 4px;
             font-size: 12px;
             line-height: 30px;
@@ -333,7 +339,7 @@
                   a {
                     color: $CarminePink;
                   }
-                  
+
                   .fa-caret-down {
                     color: $CarminePink;
                   }
@@ -390,26 +396,30 @@
           position: absolute;
           width: 100%;
           z-index: 1;
-          top: 190px;
+          top: 180px;
           left: 0;
           transition: max-height 0.5s ease-in-out;
           box-shadow: 0 6px 20px 5px #ebebeb;
           .line {
             @include Flex(flex, flex-start, center);
             border-bottom: 1px solid $BrightGray;
+            i{
+              display: none
+            }
           }
           li {
             @include Flex(flex, space-between, center);
             border-bottom: 1px solid $BrightGray;
             width: 100%;
-            &:hover{
+            padding: 5px 15px;
+            &:hover {
               background-color: white;
             }
             .fa-house {
               color: black;
             }
-            .fa-caret-down{
-                color: black;
+            .fa-caret-down {
+              color: black;
             }
             a {
               @include Size(12px, 400, 30px);
@@ -428,12 +438,13 @@
         @include max-screen($xxl) {
           display: none;
         }
-        .fa-phone-volume{
+        .fa-phone-volume {
           color: white;
         }
         a {
           text-decoration: none;
           color: white;
+          font-family: $Geologica;
         }
       }
     }
@@ -441,7 +452,7 @@
   .nav-row-right-cart {
     display: none;
     padding: 10px 30px 8px 30px;
-    
+
     @include max-screen($sm) {
       display: block;
     }
@@ -450,7 +461,7 @@
         border-color: white;
         color: white;
       }
-      p{
+      p {
         border: 1px solid white;
       }
     }
@@ -468,6 +479,7 @@
   }
   .mobie-tk {
     width: 100%;
+    height: 35px;
     display: flex;
     @include max-screen($sm) {
       margin-right: 8px;
@@ -484,12 +496,12 @@
       padding: 6px 10px;
       background-color: $CarminePink;
       cursor: pointer;
-      &:focus{
+      &:focus {
         .fa-magnifying-glass {
           color: black;
         }
       }
-      .fa-magnifying-glass   {
+      .fa-magnifying-glass {
         margin-top: 2px;
         color: white;
       }
