@@ -9,7 +9,7 @@ import { ProductEditComponent } from './page/admin/products/product-edit/product
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
 import { HomePageComponent } from './page/home-page/home-page.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
-import { LoginComponent } from './page/login/login.component';
+import { LoginComponent } from './page/base/login/login.component';
 
 const routes: Routes = [
   {

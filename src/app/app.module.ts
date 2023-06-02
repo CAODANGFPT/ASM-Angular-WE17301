@@ -15,7 +15,7 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
-import { LoginComponent } from './page/login/login.component';
+import { LoginComponent } from './page/base/login/login.component';
 
 @NgModule({
   declarations: [
