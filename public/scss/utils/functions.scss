@@ -22,7 +22,7 @@
 
 @mixin Gird($display, $gridTemplateRows){
   display: $display;
-  grid-template-rows: repeat($gridTemplateRows, minmax(0, 1fr));
+  grid-template-columns: repeat($gridTemplateRows, minmax(0, 1fr));
 }
 
 @mixin Gap($columnGap, $rowGap){
