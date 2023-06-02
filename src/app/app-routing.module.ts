@@ -9,12 +9,16 @@ import { ProductEditComponent } from './page/admin/products/product-edit/product
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
 import { HomePageComponent } from './page/home-page/home-page.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { SignupComponent } from './page/base/signup/signup.component';
 
 const routes: Routes = [
   {
     path: '',
     component: BaseLayoutComponent,
-    children: [{ path: '', component: HomePageComponent }],
+    children: [
+      { path: '', component: HomePageComponent },
+      { path: 'signup', component: SignupComponent }
+    ],
   },
   {
     path: 'admin',
