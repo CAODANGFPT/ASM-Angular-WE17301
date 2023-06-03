@@ -10,7 +10,7 @@ import { HeaderComponent } from './components/layout/base/header/header.componen
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
 import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
-import { HomePageComponent } from './page/home-page/home-page.component';
+import { HomePageComponent } from './page/base/home-page/home-page.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
