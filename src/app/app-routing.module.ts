@@ -7,9 +7,10 @@ import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
+import { ContactComponent } from './page/base/contact/contact.component';
+import { SignupComponent } from './page/base/signup/signup.component';
 import { HomePageComponent } from './page/home-page/home-page.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
-import { SignupComponent } from './page/base/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
     component: BaseLayoutComponent,
     children: [
       { path: '', component: HomePageComponent },
-      { path: 'signup', component: SignupComponent }
+      { path: 'signup', component: SignupComponent },
+      { path: 'contact', component: ContactComponent },
     ],
   },
   {
