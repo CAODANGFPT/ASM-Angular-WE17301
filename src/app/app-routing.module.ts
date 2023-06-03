@@ -8,6 +8,8 @@ import { ProductAddComponent } from './page/admin/products/product-add/product-a
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
 import { HomePageComponent } from './page/base/home-page/home-page.component';
+import { ContactComponent } from './page/base/contact/contact.component';
+import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import { LoginComponent } from './page/base/login/login.component';
 
@@ -18,6 +20,8 @@ const routes: Routes = [
     children: [
       { path: '', component: HomePageComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'signup', component: SignupComponent },
+      { path: 'contact', component: ContactComponent },
     ],
   },
   {
