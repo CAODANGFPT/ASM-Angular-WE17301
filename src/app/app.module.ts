@@ -14,8 +14,9 @@ import { ProductAddComponent } from './page/admin/products/product-add/product-a
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
 import { ContactComponent } from './page/base/contact/contact.component';
+import { HomePageComponent } from './page/base/home-page/home-page.component';
+import { LoginComponent } from './page/base/login/login.component';
 import { SignupComponent } from './page/base/signup/signup.component';
-import { HomePageComponent } from './page/home-page/home-page.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 
 @NgModule({
@@ -33,6 +34,7 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
     ProductAddComponent,
     ProductListComponent,
     ProductEditComponent,
+    LoginComponent,
     SignupComponent,
     ContactComponent,
   ],
