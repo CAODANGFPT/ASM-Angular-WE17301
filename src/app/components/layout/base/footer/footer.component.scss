@@ -55,12 +55,18 @@
               text-decoration: none;
               font-family: $Geologica;
               color: #000;
+              &:hover{
+                color: $CarminePink;
+              }
             }
           }
         }
       }
       iframe {
         width: 100%;
+        @include max-screen($sm) {
+          padding: 10px;
+        }
       }
     }
     &-center {
@@ -69,6 +75,9 @@
       padding: 10px 0 20px 0;
       @include max-screen($lg) {
         @include Gird(grid, 1);
+      }
+      @include max-screen($sm) {
+        padding: 10px;
       }
       @include max-screen($s) {
         padding: 10px;
@@ -149,6 +158,9 @@
     &-bottom {
       border-top: rgb(224, 223, 223) solid 1px;
       padding: 10px 0 20px 0;
+      @include max-screen($sm) {
+        padding: 10px;
+      }
       @include max-screen($s) {
         padding: 10px;
       }
