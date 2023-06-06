@@ -403,8 +403,8 @@
           .line {
             @include Flex(flex, flex-start, center);
             border-bottom: 1px solid $BrightGray;
-            i{
-              display: none
+            i {
+              display: none;
             }
           }
           li {
@@ -469,13 +469,15 @@
 }
 .mobie-input {
   @include Flex(flex, space-between, center);
-  margin: 10px auto 0 auto;
-  width: 70%;
+  padding: 10px 15% 0 15%;
+  margin: 0px;
+  width: 100%;
+  background-color: $Cultured;
   @include min-screen($xxl) {
     display: none;
   }
   @include max-screen($sm) {
-    width: 90%;
+    width: 100%;
   }
   .mobie-tk {
     width: 100%;
