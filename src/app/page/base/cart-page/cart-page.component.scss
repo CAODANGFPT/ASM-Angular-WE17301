@@ -77,21 +77,20 @@
 }
 .block-false {
   display: block;
-  width: 1200px;
-  margin: 0 auto;
   padding-bottom: 40px;
   .table {
+    max-width: 1200px;
+    margin: 0 auto;
     @include Flex(flex, space-around, center);
     border: 1px solid $BrightGray;
     .img-item {
       border-right: 1px solid $BrightGray;
       img {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 100px;
+        max-height: 100px;
       }
     }
     .name-item {
-      border-right: 1px solid $BrightGray;
       & a {
         color: black;
         text-decoration: none;
@@ -103,12 +102,11 @@
     .price-item {
       @include Flex(flex, space-between, center);
       color: $CarminePink;
-      & h6 {
-        text-decoration: underline;
-      }
-      &::after {
-        content: "";
-        border-right: 1px solid $BrightGray;
+      & span {
+        &::after {
+          content: "đ";
+          text-decoration: underline;
+        }
       }
     }
     .quantity {
@@ -130,12 +128,11 @@
     .sum {
       @include Flex(flex, space-between, center);
       color: $CarminePink;
-      & h6 {
-        text-decoration: underline;
-      }
-      &::after {
-        content: "";
-        border-right: 1px solid $BrightGray;
+      & span {
+        &::after {
+          content: "đ";
+          text-decoration: underline;
+        }
       }
     }
     .remo-item {
@@ -144,9 +141,20 @@
         color: $CarminePink;
       }
     }
+    @include max-screen($xxl) {
+      max-width: 900px;
+    }
+    @include max-screen($lg) {
+      max-width: 600px;
+    }
+    @include max-screen($s) {
+      max-width: 400px;
+    }
   }
   .tong-price {
     @include Flex(flex, end, center);
+    max-width: 1200px;
+    margin: 0 auto;
     border: 1px solid $BrightGray;
     padding: 20px;
     .div {
@@ -157,10 +165,27 @@
       @include Flex(Flex, space-around, center);
       margin-left: 200px;
       color: $CarminePink;
+      & span {
+        &::after {
+          content: "đ";
+          text-decoration: underline;
+        }
+      }
+    }
+    @include max-screen($xxl) {
+      max-width: 900px;
+    }
+    @include max-screen($lg) {
+      max-width: 600px;
+    }
+    @include max-screen($s) {
+      max-width: 400px;
     }
   }
   .btn-flex {
     @include Flex(Flex, space-between, center);
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 12px;
     border: 1px solid $BrightGray;
     .btn-continue {
@@ -185,6 +210,15 @@
         background-color: white;
         color: red;
       }
+    }
+    @include max-screen($xxl) {
+      max-width: 900px;
+    }
+    @include max-screen($lg) {
+      max-width: 600px;
+    }
+    @include max-screen($s) {
+      max-width: 400px;
     }
   }
 }
