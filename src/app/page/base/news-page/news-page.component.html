@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="breadCrumbs">
+    <p>Trang chủ</p>
+    <span class="line">Tin tức</span>
+  </div>
+  <div class="news">
+    <div class="news-main">
+      <div class="news-main-header">
+        <h1 class="news-main-header-title">tin tức</h1>
+      </div>
+      <div class="news-main-content">
+        <div class="news-main-content-item" *ngFor="let cardItem of cardNews">
+          <div class="news-main-content-item-img">
+            <a href="">
+              <img [src]="cardItem.image" alt="" />
+            </a>
+          </div>
+          <div class="news-main-content-item-info">
+            <h3 class="news-main-content-item-info-name">
+              <a href="" class="news-main-content-item-info-name-link">
+                {{ cardItem.title }}
+              </a>
+            </h3>
+            <div class="news-main-content-item-info-news-details">
+              <span>
+                <i class="fa-solid fa-user fa-xs"></i> {{ cardItem.author }}
+              </span>
+              <span
+                ><i class="fa-solid fa-calendar-days"></i
+                >{{ cardItem.created_at }}</span
+              >
+            </div>
+            <div class="news-main-content-item-info-summary">
+              {{ cardItem.content }}
+            </div>
+            <div class="news-main-content-item-info-viewmore">
+              <a class="news-main-content-item-info-viewmore-link" href=""
+                >Đọc thêm <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-sidebar"></div>
+  </div>
+</div>

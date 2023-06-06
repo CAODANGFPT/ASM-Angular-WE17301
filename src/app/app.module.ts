@@ -18,7 +18,7 @@ import { HomePageComponent } from './page/base/home-page/home-page.component';
 import { LoginComponent } from './page/base/login/login.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
-
+import { NewsPageComponent } from './page/base/news-page/news-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +37,7 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
     LoginComponent,
     SignupComponent,
     ContactComponent,
+    NewsPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
