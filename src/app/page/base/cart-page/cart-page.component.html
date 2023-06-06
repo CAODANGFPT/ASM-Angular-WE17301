@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="title">
+    <p>Trang chủ</p>
+    <span class="line">Giỏ hàng</span>
+  </div>
+  <div class="block-true">
+    <div class="item-empty">
+      <i class="fa-sharp fa-solid fa-bag-shopping"></i>
+      <span>không có sản phẩm nào trong giỏ hàng</span>
+    </div>
+  </div>
+  <div class="block-false">
+    <div class="table" *ngFor="let item of product">
+      <div class="img-item">
+        <img src="{{ item.image }}" alt="" />
+      </div>
+      <div class="name-item">
+        <a href="">{{ item.name }}</a>
+      </div>
+      <div class="price-item">
+        <span>{{ item.price }} </span>
+        <h6>đ</h6>
+      </div>
+      <div class="quantity">
+        <button (click)="minus(item.id)">-</button>
+        <div>{{ item.quantity }}</div>
+        <button (click)="plus(item.id)">+</button>
+      </div>
+      <div class="sum">
+        <span>{{ item.price }}</span>
+        <h6>đ</h6>
+      </div>
+      <div class="remo-item">
+        <i class="fa-solid fa-trash"></i>
+      </div>
+    </div>
+    <div class="tong-price">
+      <div>Tổng tiền</div>
+      <div class="number">
+        <span>1000</span>
+        <h6>đ</h6>
+      </div>
+    </div>
+    <div class="btn-flex">
+      <button class="btn-continue">Tiếp Tục mua hàng</button>
+      <button class="btn-pay">Tiến hành thanh toán</button>
+    </div>
+  </div>
+</div>
