@@ -25,6 +25,7 @@ import { AdvertisementComponent } from './components/advertisement/advertisement
 import { ModelProductsOutstandingComponent } from './components/model-products-outstanding/model-products-outstanding.component';
 import { ModelSupportComponent } from './components/model-support/model-support.component';
 import { ModelMenuProductsComponent } from './components/model-menu-products/model-menu-products.component';
+import { ProductDetailComponent } from './page/base/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ModelMenuProductsComponent } from './components/model-menu-products/mod
     ModelSupportComponent,
     ModelMenuProductsComponent,
     ProductPageComponent,
+    ProductDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

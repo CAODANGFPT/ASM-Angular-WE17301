@@ -1,0 +1,110 @@
+<div>
+  <div class="breadCrumbs">
+    <p>Trang chủ</p>
+    <span >Tất cả sản phẩm</span>
+    <span class="line">name sản phẩm</span>
+  </div>
+  <div class="product-page">
+    <div class="left">
+      <img src="{{ cardProduct.image }}" alt="" />
+    </div>
+    <div class="center">
+      <h3>{{ cardProduct.content }}</h3>
+      <div class="th">
+        <p><span>Thương hiệu:</span> <span>Converse</span></p>
+        <p><span>Loại:</span> <span>Converse</span></p>
+      </div>
+      <div class="price">
+        <p class="price-sale">300.000 đ</p>
+        <p class="price-origin">450.000 đ</p>
+      </div>
+      <div class="mota">
+        <div>Mô tả:</div>
+        <p>
+          - Mắt xỏ dây âm với dây cột nylon <br />
+          - Lót trong bằng da thoáng khí tự nhiên <br />
+          - Đệm lót giày bằng da bọc thoải mái và hỗ trợ chân
+        </p>
+      </div>
+      <form>
+        <div class="quantity">
+          <div class="quantity-title">Số lượng</div>
+          <div class="quantity-ch">
+            <button (click)="minus($event)">-</button>
+            <input type="number" (input)="setValue($event)" value="{{valueInput}}" min="1" readonly />
+            <button (click)="plus($event)">+</button>
+          </div>
+        </div>
+        <div class="btn">
+          <button type="submit">
+            <span class="fa-solid fa-cart-shopping"></span>Thêm vào giỏ hàng
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="right">
+      <div class="right-content">
+        <div><i class="fa-solid fa-truck"></i></div>
+        <div>Miễn phí vận chuyển với đơn hàng lớn hơn 1.000.000 đ</div>
+      </div>
+      <div class="right-content">
+        <div><i class="fa-solid fa-clock"></i></div>
+        <div>Giao hàng ngay sau khi đặt hàng (áp dụng với Hà Nội và HCM)</div>
+      </div>
+      <div class="right-content">
+        <div><span class="fas fa-exchange-alt"></span></div>
+        <div>Đổi trả trong 3 ngày, thủ tục đơn giản</div>
+      </div>
+      <div class="right-content">
+        <div><i class="fas fa-clipboard-list"></i></div>
+        <div>Nhà cung cấp xuất hóa đơn cho sản phẩm này</div>
+      </div>
+    </div>
+  </div>
+  <div class="detail">
+    <p class="detail-title"><span>Chi tiết sản phẩm</span></p>
+    <div class="detail-main">
+      Giày thể thao nam đẹp da màu nâu cao cấp, thanh lịch từ thương hiệu
+      Converse® Chất liệu giày bằng da bò mềm với chi tiết mũi giày cap-toe Mắt
+      xỏ dây âm với dây cột nylon Lót trong bằng da thoáng khí tự nhiên Đệm lót
+      giày bằng da bọc thoải mái và hỗ trợ chân Đế ngoài băng cao su hấp thụ sốc
+      tốt và bám tốt trên mọi bề mặt Giày thể thao nam đẹp da màu nâu cao cấp,
+      thanh lịch từ thương hiệu Converse® Chất liệu giày bằng da bò mềm với chi
+      tiết mũi giày cap-toe Mắt xỏ dây âm với dây cột nylon Lót trong bằng da
+      thoáng khí tự nhiên Đệm lót giày bằng da bọc thoải mái và hỗ trợ chân Đế
+      ngoài băng cao su hấp thụ sốc tốt và bám tốt trên mọi bề mặt Giày thể thao
+      nam đẹp da màu nâu cao cấp, thanh lịch từ thương hiệu Converse® Chất liệu
+      giày bằng da bò mềm với chi tiết mũi giày cap-toe Mắt xỏ dây âm với dây
+      cột nylon Lót trong bằng da thoáng khí tự nhiên Đệm lót giày bằng da bọc
+      thoải mái và hỗ trợ chân Đế ngoài băng cao su hấp thụ sốc tốt và bám tốt
+      trên mọi bề mặt Giày thể thao nam đẹp da màu nâu cao cấp, thanh lịch từ
+      thương hiệu Converse® Chất liệu giày bằng da bò mềm với chi tiết mũi giày
+      cap-toe Mắt xỏ dây âm với dây cột nylon Lót trong bằng da thoáng khí tự
+      nhiên Đệm lót giày bằng da bọc thoải mái và hỗ trợ chân Đế ngoài băng cao
+      su hấp thụ sốc tốt và bám tốt trên mọi bề mặt
+    </div>
+  </div>
+  <div class="products-lq">
+    <div class="products">
+        <div class="title">
+          <h2>Sản phẩm liên quan</h2>
+        </div>
+        <div class="article">
+          <div *ngFor="let item of cardProducts" class="article-slider">
+            <div class="image">
+              <img
+                src="https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487"
+                alt=""
+              />
+              <div class="tag">New</div>
+            </div>
+            <p class="content">{{ item.content }}</p>
+            <div class="price">
+              <p class="price-new">{{ item.priceNew }}</p>
+              <p class="price-old">{{ item.priceOld }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
