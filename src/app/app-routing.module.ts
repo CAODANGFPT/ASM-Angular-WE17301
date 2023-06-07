@@ -12,7 +12,7 @@ import { ContactComponent } from './page/base/contact/contact.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import { LoginComponent } from './page/base/login/login.component';
-
+import { NewsPageComponent } from './page/base/news-page/news-page.component';
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +22,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'contact', component: ContactComponent },
+      { path: 'news', component: NewsPageComponent },
     ],
   },
   {

@@ -18,6 +18,7 @@ import { HomePageComponent } from './page/base/home-page/home-page.component';
 import { LoginComponent } from './page/base/login/login.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { NewsPageComponent } from './page/base/news-page/news-page.component';
 import { ModelNewsComponent } from './components/model-news/model-news.component';
 import { AdvertisementComponent } from './components/advertisement/advertisement.component';
 import { ModelProductsOutstandingComponent } from './components/model-products-outstanding/model-products-outstanding.component';
@@ -42,6 +43,7 @@ import { ModelMenuProductsComponent } from './components/model-menu-products/mod
     LoginComponent,
     SignupComponent,
     ContactComponent,
+    NewsPageComponent,
     ModelNewsComponent,
     AdvertisementComponent,
     ModelProductsOutstandingComponent,
