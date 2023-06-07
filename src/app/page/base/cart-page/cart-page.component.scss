@@ -56,7 +56,6 @@
 
 .block-true {
   display: none;
-
   margin: 0 auto;
   .item-empty {
     padding: 90px;
@@ -76,149 +75,137 @@
   }
 }
 .block-false {
-  display: block;
-  padding-bottom: 40px;
-  .table {
-    max-width: 1200px;
-    margin: 0 auto;
-    @include Flex(flex, space-around, center);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px;
+  table {
+    width: 100%;
     border: 1px solid $BrightGray;
-    .img-item {
-      border-right: 1px solid $BrightGray;
-      img {
-        max-width: 100px;
-        max-height: 100px;
-      }
-    }
-    .name-item {
-      & a {
-        color: black;
-        text-decoration: none;
-        &:hover {
-          color: $CarminePink;
+    tbody {
+      text-align: center;
+
+      tr {
+        td {
+          padding: 6px 10px;
+
+          border-top: 1px solid $BrightGray;
+
+          border-right: 1px solid $BrightGray;
+
+          img {
+            max-width: 100px;
+
+            max-height: 100px;
+          }
+
+          .chucnang {
+            @include Flex(flex, center, center);
+
+            button {
+              border: 1px solid;
+
+              padding: 5.5px;
+            }
+
+            span {
+              border-top: 1px solid black;
+
+              border-bottom: 1px solid black;
+
+              padding: 4px 6px;
+            }
+          }
+
+          i {
+            font-size: 28px;
+
+            color: $CarminePink;
+          }
+
+          a {
+            text-decoration: none;
+
+            color: black;
+          }
+        }
+
+        .price {
+          span {
+            color: $CarminePink;
+
+            &::after {
+              content: "đ";
+
+              text-decoration: underline;
+            }
+          }
         }
       }
     }
-    .price-item {
-      @include Flex(flex, space-between, center);
-      color: $CarminePink;
-      & span {
-        &::after {
-          content: "đ";
-          text-decoration: underline;
-        }
-      }
-    }
-    .quantity {
-      @include Flex(Flex, center, center);
-      border-right: 1px solid $BrightGray;
-      div {
-        border: 1px solid black;
-        padding: 4px 7px;
-        max-width: 24px;
-        min-height: 30px;
-      }
-      button {
-        border: 1px solid black;
+
+    tfoot {
+      tr,
+      td {
+        text-align: center;
+
         padding: 6px 10px;
-        background-color: white;
-        cursor: pointer;
-      }
-    }
-    .sum {
-      @include Flex(flex, space-between, center);
-      color: $CarminePink;
-      & span {
-        &::after {
-          content: "đ";
-          text-decoration: underline;
+
+        border: 1px solid $BrightGray;
+
+        .btn-contineu {
+          border-radius: 1px solid;
+
+          padding: 12px;
+
+          transition: all 0.5s;
+
+          &:hover {
+            color: white;
+
+            border-color: $CarminePink;
+
+            background-color: $CarminePink;
+          }
+        }
+
+        .btn-pay {
+          border-radius: 1px solid $CarminePink;
+
+          border-color: $CarminePink;
+
+          color: white;
+
+          background-color: $CarminePink;
+
+          padding: 12px;
+
+          transition: all 0.5s;
+
+          &:hover {
+            color: $CarminePink;
+
+            background-color: white;
+          }
+
+          @include max-screen($s) {
+            padding: 4px;
+
+            min-width: 120px;
+          }
         }
       }
     }
-    .remo-item {
-      i {
-        font-size: 40px;
-        color: $CarminePink;
-      }
-    }
-    @include max-screen($xxl) {
-      max-width: 900px;
-    }
-    @include max-screen($lg) {
-      max-width: 600px;
-    }
-    @include max-screen($s) {
-      max-width: 400px;
-    }
   }
-  .tong-price {
-    @include Flex(flex, end, center);
-    max-width: 1200px;
-    margin: 0 auto;
-    border: 1px solid $BrightGray;
-    padding: 20px;
-    .div {
-      border-right: 1px solid $BrightGray;
-      color: $BrightGray;
-    }
-    .number {
-      @include Flex(Flex, space-around, center);
-      margin-left: 200px;
-      color: $CarminePink;
-      & span {
-        &::after {
-          content: "đ";
-          text-decoration: underline;
-        }
-      }
-    }
-    @include max-screen($xxl) {
-      max-width: 900px;
-    }
-    @include max-screen($lg) {
-      max-width: 600px;
-    }
-    @include max-screen($s) {
-      max-width: 400px;
-    }
+  @include max-screen($xxl) {
+    max-width: 900px;
   }
-  .btn-flex {
-    @include Flex(Flex, space-between, center);
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 12px;
-    border: 1px solid $BrightGray;
-    .btn-continue {
-      padding: 8px;
-      border: 1px solid;
-      border-color: black;
-      transition: background-color ease-in-out 0.3s;
-      &:hover {
-        border-color: $CarminePink;
-        background-color: $CarminePink;
-        color: $Cultured;
-      }
-    }
-    .btn-pay {
-      padding: 8px;
-      border: 1px solid;
-      border-color: $CarminePink;
-      background-color: $CarminePink;
-      color: white;
-      transition: background-color ease-in-out 0.3s;
-      &:hover {
-        background-color: white;
-        color: red;
-      }
-    }
-    @include max-screen($xxl) {
-      max-width: 900px;
-    }
-    @include max-screen($lg) {
-      max-width: 600px;
-    }
-    @include max-screen($s) {
-      max-width: 400px;
-    }
+
+  @include max-screen($sm) {
+    max-width: 600px;
+  }
+  @include max-screen($s) {
+    overflow-x: auto;
+    max-width: 400px;
+    min-height: 100px;
   }
 }
