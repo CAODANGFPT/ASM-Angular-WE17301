@@ -201,8 +201,6 @@
             top: -10px;
             right: -10px;
             background-color: $CarminePink;
-            // height: 1.8em;
-            // width: 1.8em;
             padding: 3px 8px;
             border-radius: 50%;
           }
@@ -291,6 +289,7 @@
             background-color: $Cinnabar;
             .header-menu-child {
               display: block;
+              z-index: 1;
             }
           }
           a {

@@ -1,5 +1,6 @@
 @import "../../../../../public/scss/utils/variables.scss";
 @import "../../../../../public/scss/utils/functions.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -54,167 +55,124 @@
     }
   }
   .news {
-    padding-top: 30px;
+    @include Flex(flex, space-between, flex-start);
+    @include Gap(30px, 30px);
+    padding: 30px 10px 0 10px;
     @include min-screen($xxl) {
       width: 1200px;
       margin: 0 auto;
     }
-    @include Flex(flex, space-between, null);
-
     @include max-screen($lg) {
-      display: block;
+      @include Flex(flex, center, center);
+      flex-direction: column-reverse;
     }
-    // @include min-screen($sm) {
-    //   display: block;
-    // }
-
+    &-sidebar {
+      @include Flex(flex, center, center);
+      @include Gap(30px, 30px);
+      flex-direction: column;
+      app-model-news{
+        font-family: $Geologica;
+      }
+      app-advertisement{
+        width: 100%;
+      }
+    }
     &-main {
-      order: 2;
-      padding-left: 15px;
-      @include max-screen($s) {
-        padding: 0 15px;
-      }
-      @include max-screen($lg) {
-        padding: 0 15px;
-      }
-      @include max-screen($sm) {
-        padding: 0 15px;
-      }
-      &-header {
-        &-title {
-          text-transform: uppercase;
-          font-size: 25px;
-          font-family: $Geologica;
-          margin-bottom: 15px;
-
-          @include max-screen($sm) {
-            @include Size(16px, 600, 0);
-          }
+      &-title {
+        text-transform: uppercase;
+        font-size: 25px;
+        font-family: $Geologica;
+        margin-bottom: 15px;
+        @include max-screen($sm) {
+          @include Size(16px, 600, 0);
         }
       }
       &-content {
-        &-item {
-          padding-bottom: 20px;
-          margin-bottom: 20px;
-          border-bottom: #ebebeb 1px solid;
-          @include max-screen($sm) {
-            display: block;
-            margin: 30px 0;
-          }
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ebebeb;
+        @include max-screen($sm) {
+          display: block;
+          margin: 30px 0;
+        }
+        @include min-screen($sm) {
+          display: flex;
+        }
+        &-img {
           @include min-screen($sm) {
-            display: flex;
+            margin-right: 15px;
           }
-
-          @include min-screen($lg) {
-            display: flex;
-          }
-          &-img {
-            @include min-screen($sm) {
-              margin-right: 15px;
-            }
-            a {
-              img {
-                height: auto;
-
-                @include max-screen($sm) {
-                  width: 100%;
-                }
-                @include min-screen($sm) {
-                  width: 360px;
-                }
-                @include min-screen($lg) {
-                  padding-right: 15px;
-
-                  width: 335px;
-                }
+          a {
+            img {
+              height: auto;
+              @include max-screen($sm) {
+                width: 100%;
               }
-            }
-          }
-          &-info {
-            &-name {
-              margin: 5px 0 10px;
-              &:hover {
-                a {
-                  color: #dc3333;
-                }
+              @include min-screen($sm) {
+                width: 360px;
               }
-              a {
-                @include Size(24px, 500, 25px);
-                text-decoration: none;
-                color: #333;
-                font-family: $Geologica;
-              }
-            }
-            &-news-details {
-              font-size: 0.92857em;
-              color: $DarkSilver;
-              margin-bottom: 10px;
-              span {
-                margin-right: 7px;
-                font-family: $Geologica;
-                font-size: 0.9rem;
-                i {
-                  font-size: 0.8rem;
-                  margin-right: 2px;
-                  color: $DarkSilver;
-                }
-              }
-            }
-            &-summary {
-              color: $DarkSilver;
-              margin-bottom: 10px;
-              font-family: $Geologica;
-              @include Size(0.9rem, 0, 22px);
-            }
-            &-viewmore {
-              width: 100%;
-              &-link {
-                white-space: nowrap;
-                outline: none !important;
-                cursor: pointer;
-                letter-spacing: 0;
-                display: inline-block;
-                color: #fff;
-                border: none;
-                background-color: #dc3333;
-                padding: 0 20px;
-                line-height: 40px;
-                text-decoration: none;
-                transition: background-color 0.3s ease-in;
-                font-family: $Geologica;
-                font-size: 14px;
-                &:hover {
-                  background-color: #333;
-                }
+              @include min-screen($lg) {
+                padding-right: 15px;
+                width: 335px;
               }
             }
           }
         }
-      }
-    }
-    &-sidebar {
-      order: 1;
-
-      @include max-screen($sm) {
-        margin-right: 0px;
-        padding: 0 15px;
-      }
-      @include max-screen($s) {
-        margin-right: 0px;
-        padding: 0 15px;
-      }
-
-      @include max-screen($lg) {
-        margin-right: 0px;
-        padding: 0 15px;
-      }
-
-      @include min-screen($lg) {
-        width: 25%;
-        padding-right: 15px;
-      }
-      &-slider {
-        margin-bottom: 30px;
+        &-info {
+          &-name {
+            margin: 5px 0 10px;
+            &:hover {
+              a {
+                color: #dc3333;
+              }
+            }
+            a {
+              @include Size(24px, 500, 25px);
+              text-decoration: none;
+              color: #333;
+              font-family: $Geologica;
+            }
+          }
+          &-news-details {
+            font-size: 0.92857em;
+            color: $DarkSilver;
+            margin-bottom: 10px;
+            span {
+              margin-right: 7px;
+              font-family: $Geologica;
+              font-size: 0.9rem;
+              i {
+                font-size: 0.8rem;
+                margin-right: 2px;
+                color: $DarkSilver;
+              }
+            }
+          }
+          &-summary {
+            @include Size(0.9rem, 0, 22px);
+            color: $DarkSilver;
+            margin-bottom: 10px;
+            font-family: $Geologica;
+          }
+          &-viewmore {
+            width: 100%;
+            &-link {
+              @include Size(14px, 400, 40px);
+              cursor: pointer;
+              display: inline-block;
+              color: white;
+              border: none;
+              background-color: $CarminePink;
+              padding: 0 20px;
+              text-decoration: none;
+              font-family: $Geologica;
+              transition: background-color 0.5s ease-in-out;
+              &:hover {
+                background-color: #333;
+              }
+            }
+          }
+        }
       }
     }
   }
