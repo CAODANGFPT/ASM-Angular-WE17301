@@ -35,3 +35,9 @@
   font-weight: $fontWeight;
   line-height: $lineHeight;
 }
+
+@mixin Border($border, $outline, $padding) {
+  border: $border;
+  outline: $outline;
+  padding: $padding;
+}

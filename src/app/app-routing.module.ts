@@ -13,6 +13,7 @@ import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import { LoginComponent } from './page/base/login/login.component';
 import { NewsPageComponent } from './page/base/news-page/news-page.component';
+import { DetailNewsPageComponent } from './page/base/detail-news-page/detail-news-page.component';
 const routes: Routes = [
   {
     path: '',
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'signup', component: SignupComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'news', component: NewsPageComponent },
+      { path: 'news/:id', component: DetailNewsPageComponent },
     ],
   },
   {
