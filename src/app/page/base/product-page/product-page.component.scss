@@ -6,6 +6,53 @@
   padding: 0;
   box-sizing: border-box;
 }
+.breadCrumbs {
+  @include Flex(flex, flex-start, center);
+  @include Gap(5px, 0);
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 1rem;
+  font-family: $Geologica;
+  border-bottom: 1px solid #ebebeb;
+  @include max-screen($xxl) {
+    max-width: 900px;
+  }
+  @include max-screen($lg) {
+    max-width: 600px;
+  }
+  @include max-screen($s) {
+    max-width: 400px;
+  }
+  p {
+    @include Size(14px, 400, normal);
+    cursor: pointer;
+    &:hover {
+      color: $CarminePink;
+    }
+  }
+  span {
+    @include Size(14px, 400, normal);
+    cursor: pointer;
+    &::before {
+      content: "\f101";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin-right: 5px;
+      color: #ccc;
+    }
+    &:hover {
+      color: $CarminePink;
+    }
+  }
+  .line {
+    color: $CarminePink;
+  }
+}
 .main {
   background-color: $Cultured;
   font-family: $Geologica;
@@ -48,7 +95,6 @@
       .productsSale {
         .title {
           padding: 10px 15px;
-          background-color: white;
           position: relative;
           border-top: 2px solid $CarminePink;
           max-width: 870px;
@@ -64,7 +110,30 @@
             text-transform: uppercase;
           }
         }
-
+        .arrange{
+          padding: 10px 15px;
+          margin-bottom: 10px;
+          @include Flex(flex, flex-start, center);
+          p{
+            font-size: 0.8rem;
+          }
+          select{
+            margin-left: 10px;
+            width: 180px !important;
+            height: 34px !important;
+            float: left;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: none;
+            text-align: center;
+            outline: none;
+            border: 0.5px solid $VenetianRed;
+            option{
+              padding: 10px 40px;
+            }
+          }
+        }
         .article {
           @include Gird(grid, 4);
           width: 870px;
