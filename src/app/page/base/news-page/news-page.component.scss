@@ -70,6 +70,9 @@
       @include Flex(flex, center, center);
       @include Gap(30px, 30px);
       flex-direction: column;
+      @include max-screen($lg){
+        display: none;
+      }
       app-model-news{
         font-family: $Geologica;
       }
