@@ -18,6 +18,11 @@ import { HomePageComponent } from './page/base/home-page/home-page.component';
 import { LoginComponent } from './page/base/login/login.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { ModelNewsComponent } from './components/model-news/model-news.component';
+import { AdvertisementComponent } from './components/advertisement/advertisement.component';
+import { ModelProductsOutstandingComponent } from './components/model-products-outstanding/model-products-outstanding.component';
+import { ModelSupportComponent } from './components/model-support/model-support.component';
+import { ModelMenuProductsComponent } from './components/model-menu-products/model-menu-products.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +42,11 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
     LoginComponent,
     SignupComponent,
     ContactComponent,
+    ModelNewsComponent,
+    AdvertisementComponent,
+    ModelProductsOutstandingComponent,
+    ModelSupportComponent,
+    ModelMenuProductsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
