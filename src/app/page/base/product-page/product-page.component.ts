@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 interface IProduct {
   id: number;
   image: string;
@@ -7,13 +6,12 @@ interface IProduct {
   priceNew: number;
   priceOld: number;
 }
-
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss'],
+  selector: 'app-product-page',
+  templateUrl: './product-page.component.html',
+  styleUrls: ['./product-page.component.scss']
 })
-export class HomePageComponent {
+export class ProductPageComponent {
   counter: number = 1;
   slide = setInterval(() => {
     const element = document.getElementById(
@@ -59,7 +57,7 @@ export class HomePageComponent {
         'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
       content: 'Giày da Converse cao cấp',
       priceNew: 1200000,
-      priceOld: 1400000,
+      priceOld: 0,
     },
     {
       id: 2,

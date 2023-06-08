@@ -7,11 +7,14 @@ import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
-import { HomePageComponent } from './page/base/home-page/home-page.component';
+import { CartPageComponent } from './page/base/cart-page/cart-page.component';
 import { ContactComponent } from './page/base/contact/contact.component';
+import { HomePageComponent } from './page/base/home-page/home-page.component';
+import { LoginComponent } from './page/base/login/login.component';
+import { NewsPageComponent } from './page/base/news-page/news-page.component';
+import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
-import { LoginComponent } from './page/base/login/login.component';
 import { IntroducePageComponent } from './page/base/introduce-page/introduce-page.component';
 
 const routes: Routes = [
@@ -24,6 +27,9 @@ const routes: Routes = [
       { path: 'signup', component: SignupComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'introduce', component: IntroducePageComponent },
+      { path: 'cart', component: CartPageComponent },
+      { path: 'news', component: NewsPageComponent },
+      { path: 'products', component: ProductPageComponent },
     ],
   },
   {

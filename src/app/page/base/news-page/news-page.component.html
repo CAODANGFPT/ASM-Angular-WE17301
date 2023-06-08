@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="breadCrumbs">
+    <p>Trang chủ</p>
+    <span class="line">Tin tức</span>
+  </div>
+  <div class="news">
+    <div class="news-sidebar">
+      <app-model-news />
+      <app-advertisement />
+    </div>
+    <div class="news-main">
+      <h1 class="news-main-title">tin tức</h1>
+      <div class="news-main-content" *ngFor="let cardItem of cardNews">
+        <div class="news-main-content-img">
+          <a href="">
+            <img [src]="cardItem.image" alt="" />
+          </a>
+        </div>
+        <div class="news-main-content-info">
+          <h3 class="news-main-content-info-name">
+            <a href="" class="news-main-content-info-name-link">
+              {{ cardItem.title }}
+            </a>
+          </h3>
+          <div class="news-main-content-info-news-details">
+            <span>
+              <i class="fa-solid fa-user fa-xs"></i> {{ cardItem.author }}
+            </span>
+            <span
+              ><i class="fa-solid fa-calendar-days"></i
+              >{{ cardItem.created_at }}</span
+            >
+          </div>
+          <div class="news-main-content-info-summary">
+            {{ cardItem.content }}
+          </div>
+          <div class="news-main-content-info-viewmore">
+            <a class="news-main-content-info-viewmore-link" href=""
+              >Đọc thêm <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

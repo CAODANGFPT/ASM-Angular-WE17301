@@ -13,12 +13,20 @@ import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
+import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { ContactComponent } from './page/base/contact/contact.component';
 import { HomePageComponent } from './page/base/home-page/home-page.component';
 import { LoginComponent } from './page/base/login/login.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import { IntroducePageComponent } from './page/base/introduce-page/introduce-page.component';
+import { CartPageComponent } from './page/base/cart-page/cart-page.component';
+import { NewsPageComponent } from './page/base/news-page/news-page.component';
+import { ModelNewsComponent } from './components/model-news/model-news.component';
+import { AdvertisementComponent } from './components/advertisement/advertisement.component';
+import { ModelProductsOutstandingComponent } from './components/model-products-outstanding/model-products-outstanding.component';
+import { ModelSupportComponent } from './components/model-support/model-support.component';
+import { ModelMenuProductsComponent } from './components/model-menu-products/model-menu-products.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +47,14 @@ import { IntroducePageComponent } from './page/base/introduce-page/introduce-pag
     SignupComponent,
     ContactComponent,
     IntroducePageComponent,
+    CartPageComponent,
+    NewsPageComponent,
+    ModelNewsComponent,
+    AdvertisementComponent,
+    ModelProductsOutstandingComponent,
+    ModelSupportComponent,
+    ModelMenuProductsComponent,
+    ProductPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
