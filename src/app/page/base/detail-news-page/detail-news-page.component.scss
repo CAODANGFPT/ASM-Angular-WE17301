@@ -206,6 +206,7 @@
             color: $DarkSilver;
             padding: 10px;
             transition: all ease 0.3s;
+            border: 1px solid transparent;
             &:hover {
               border: #ea4242 1px dashed;
               border-radius: 15px;
@@ -262,7 +263,8 @@
                 display: block;
                 color: #4d4d4d;
                 @include Size(0.9rem, 0, 20px);
-                font-family: $Geologica;
+                line-height: 1.7;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
               }
             }
           }
