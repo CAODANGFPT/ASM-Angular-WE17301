@@ -150,6 +150,7 @@
             font-family: $Geologica;
             padding: 8px 10px;
             font-size: 1rem;
+            opacity: 0.5;
             &:hover {
               border-color: #dc3333;
               background: #dc3333;
@@ -204,6 +205,7 @@
             margin-right: 15px;
             color: $DarkSilver;
             padding: 10px;
+            transition: all ease 0.3s;
             &:hover {
               border: #ea4242 1px dashed;
               border-radius: 15px;
@@ -297,6 +299,8 @@
                 display: block;
                 width: 100%;
                 color: $DavyGrey;
+                font-family: $Geologica;
+                @include Size(1rem, 0, 1.5);
                 @include Border($BrightGray 1px solid, none, 10px 15px);
                 &:active {
                   border: #dc3333 1px solid;
@@ -312,6 +316,7 @@
               min-height: 40px;
               @include Size(1rem, 0, 1.5);
               color: $DavyGrey;
+              font-family: $Geologica;
               margin: 0;
               &:active {
                 border: #dc3333 1px solid;
