@@ -31,7 +31,7 @@
           <div class="quantity-title">Số lượng</div>
           <div class="quantity-ch">
             <button (click)="minus($event)">-</button>
-            <input type="number" (input)="setValue($event)" value="{{valueInput}}" min="1" readonly />
+            <input type="text" (input)="setValue($event)" value="{{valueInput}}" min="1" readonly />
             <button (click)="plus($event)">+</button>
           </div>
         </div>

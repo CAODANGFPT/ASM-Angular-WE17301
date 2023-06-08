@@ -159,6 +159,7 @@ div {
               background-color: white;
               border: 1px solid white;
               transition: background-color ease-in-out 0.3s;
+              cursor: pointer;
               &:hover {
                 background-color: black;
                 color: white;
@@ -167,12 +168,11 @@ div {
             input {
               width: 20%;
               border: none;
-              padding: 10px 15px;
+              padding: 10px 0;
               outline: none;
               text-align: center;
-              &:focus {
-                box-shadow: 0 0 7px rgba(0, 225, 255, 0.3);
-              }
+              user-select: none;
+              -webkit-user-select: none;
             }
           }
         }
@@ -189,6 +189,7 @@ div {
             float: left;
             border: none;
             color: white;
+            cursor: pointer;
             transition: background-color ease-in-out 0.3s;
             span {
               padding-right: 5px;
@@ -249,14 +250,13 @@ div {
     }
     &-main {
       background-color: white;
-      line-height: 1.7;
+      line-height: 2;
       padding: 10px 10px;
     }
     &-title {
-      margin-top: 20px;
+      margin-top: 50px;
       padding: 20px 10px;
       background-color: white;
-      width: 160px;
       border-top: 2px solid black;
       span {
         font-weight: 600;

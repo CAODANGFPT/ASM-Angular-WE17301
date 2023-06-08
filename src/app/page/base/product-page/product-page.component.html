@@ -1,43 +1,45 @@
-<div class="breadCrumbs">
-  <p>Trang chủ</p>
-  <span class="line">Tất cả sản phẩm</span>
-</div>
-<div class="main">
-  <div class="homepage">
-    <div class="homepage-aside">
-      <app-model-menu-products />
-      <app-model-support />
-      <app-model-products-outstanding />
-      <app-advertisement />
-      <app-model-news />
-    </div>
-    <div class="homepage-main">
-      <div class="productsSale">
-        <div class="title">
-          <h2>Tất cả sản phẩm</h2>
-        </div>
-        <div class="arrange">
-          <p>Sắp xếp theo:</p>
-          <select name="" id="">
-            <option value="">Mặc định</option>
-            <option value="">Giá tăng dần</option>
-            <option value="">Giá giảm dần</option>
-            <option value="">Từ A-Z</option>
-            <option value="">Từ Z-A</option>
-          </select>
-        </div>
-        <div class="article">
-          <div *ngFor="let item of cardProducts" class="article-slider">
-            <div routerLink="" class="image">
-              <img
-                src="https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487"
-                alt=""
-              />
-            </div>
-            <p routerLink="" class="content">{{ item.content }}</p>
-            <div class="price">
-              <p class="price-new">{{ item.priceNew }}</p>
-              <p class="price-old" *ngIf="item.priceOld > 0">{{ item.priceOld }}</p>
+<div>
+  <div class="breadCrumbs">
+    <p>Trang chủ</p>
+    <span class="line">Tất cả sản phẩm</span>
+  </div>
+  <div class="main">
+    <div class="homepage">
+      <div class="homepage-aside">
+        <app-model-menu-products />
+        <app-model-support />
+        <app-model-products-outstanding />
+        <app-advertisement />
+        <app-model-news />
+      </div>
+      <div class="homepage-main">
+        <div class="productsSale">
+          <div class="title">
+            <h2>Tất cả sản phẩm</h2>
+          </div>
+          <div class="arrange">
+            <p>Sắp xếp theo:</p>
+            <select name="" id="">
+              <option value="">Mặc định</option>
+              <option value="">Giá tăng dần</option>
+              <option value="">Giá giảm dần</option>
+              <option value="">Từ A-Z</option>
+              <option value="">Từ Z-A</option>
+            </select>
+          </div>
+          <div class="article">
+            <div *ngFor="let item of cardProducts" class="article-slider">
+              <div routerLink="1" class="image">
+                <img
+                  src="https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487"
+                  alt=""
+                />
+              </div>
+              <p routerLink="1" class="content">{{ item.content }}</p>
+              <div class="price">
+                <p class="price-new">{{ item.priceNew }}</p>
+                <p class="price-old" *ngIf="item.priceOld > 0">{{ item.priceOld }}</p>
+              </div>
             </div>
           </div>
         </div>
