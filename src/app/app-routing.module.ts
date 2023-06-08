@@ -15,6 +15,7 @@ import { NewsPageComponent } from './page/base/news-page/news-page.component';
 import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { IntroducePageComponent } from './page/base/introduce-page/introduce-page.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'contact', component: ContactComponent },
+      { path: 'introduce', component: IntroducePageComponent },
       { path: 'cart', component: CartPageComponent },
       { path: 'news', component: NewsPageComponent },
       { path: 'products', component: ProductPageComponent },

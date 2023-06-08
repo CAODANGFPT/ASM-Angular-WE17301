@@ -19,6 +19,7 @@ import { HomePageComponent } from './page/base/home-page/home-page.component';
 import { LoginComponent } from './page/base/login/login.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { IntroducePageComponent } from './page/base/introduce-page/introduce-page.component';
 import { CartPageComponent } from './page/base/cart-page/cart-page.component';
 import { NewsPageComponent } from './page/base/news-page/news-page.component';
 import { ModelNewsComponent } from './components/model-news/model-news.component';
@@ -45,6 +46,7 @@ import { ModelMenuProductsComponent } from './components/model-menu-products/mod
     LoginComponent,
     SignupComponent,
     ContactComponent,
+    IntroducePageComponent,
     CartPageComponent,
     NewsPageComponent,
     ModelNewsComponent,
