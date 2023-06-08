@@ -12,6 +12,7 @@ import { ContactComponent } from './page/base/contact/contact.component';
 import { HomePageComponent } from './page/base/home-page/home-page.component';
 import { LoginComponent } from './page/base/login/login.component';
 import { NewsPageComponent } from './page/base/news-page/news-page.component';
+import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 
@@ -26,6 +27,7 @@ const routes: Routes = [
       { path: 'contact', component: ContactComponent },
       { path: 'cart', component: CartPageComponent },
       { path: 'news', component: NewsPageComponent },
+      { path: 'products', component: ProductPageComponent },
     ],
   },
   {

@@ -13,6 +13,7 @@ import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
+import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { ContactComponent } from './page/base/contact/contact.component';
 import { HomePageComponent } from './page/base/home-page/home-page.component';
 import { LoginComponent } from './page/base/login/login.component';
@@ -51,6 +52,7 @@ import { ModelMenuProductsComponent } from './components/model-menu-products/mod
     ModelProductsOutstandingComponent,
     ModelSupportComponent,
     ModelMenuProductsComponent,
+    ProductPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
