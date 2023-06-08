@@ -3,8 +3,6 @@ import express from "express";
 import mongoose from "mongoose";
 import authRouter from "./routes/auth";
 import productRouter from "./routes/product";
-import authRouter from "./routes/auth";
-
 const app = express();
 
 // middleware
