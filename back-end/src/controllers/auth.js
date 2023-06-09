@@ -28,7 +28,7 @@ export const signin = async (req, res) =>  {
               message: "Mật khẩu không đúng",
           })
       }
-      const accessToken = jwt.sign({ _id: user._id }, "banhai", { expiresIn: "1d" });
+      const accessToken = jwt.sign({ _id: user._id }, "ASM", { expiresIn: "1d" });
   
       return res.status(201).json({
           message: "Đăng nhập thành công",
@@ -46,7 +46,7 @@ export const signup = async (req, res) => {
     const { error } = signupSchema.validate(req.body, { abortEarly: false });
     if (error) {
       const errors = error.details.map((err) => err.message);
-      return res.status(400).json({
+      return res.status(402).json({
         messages: errors,
       });
     }
