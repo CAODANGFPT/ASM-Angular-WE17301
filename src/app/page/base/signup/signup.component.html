@@ -107,12 +107,22 @@
         />
         <div
           *ngIf="
-            formSignUp?.hasError('notMatch') &&
+            formSignUp.hasError('notMatch') &&
             (formSignUp.get('confirmPassword')?.touched ||
               formSignUp.get('confirmPassword')?.dirty)
           "
+          class="error-message"
         >
-          Password not same
+          Mật khẩu không trùng khớp
+        </div>
+        <div
+          *ngIf="
+          formSignUp.get('confirmPassword')?.hasError('required') &&
+          (formSignUp.get('confirmPassword')?.touched || formSignUp.get('confirmPassword')?.dirty)
+          "
+          class="error-message"
+        >
+          Mật khẩu không được để trống
         </div>
       </div>
       <div class="btn item-6">

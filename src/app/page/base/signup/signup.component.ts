@@ -24,13 +24,17 @@ export class SignupComponent {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required]],
     },
-    { Validators: this.checkPassword }
+    { validators: this.checkPassword }
   );
+
   checkPassword(form: FormGroup) {
     const password = form.get('password')?.value;
     const confirmPassword = form.get('confirmPassword')?.value;
-    if (password === confirmPassword) return null;
-    return { notMatch: true };
+    if (password === confirmPassword) {
+      return null;
+    } else {
+      return { notMatch: true }; 
+    }
   }
   onHandleSubmit() {
     if (this.formSignUp.valid) {
