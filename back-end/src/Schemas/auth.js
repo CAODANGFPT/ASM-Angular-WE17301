@@ -22,11 +22,9 @@ export const signupSchema = joi.object({
     "any.required": "Trường email là bắt buộc",
     "string.email": "Email không đúng định dạng",
   }),
-  phone: joi.number().required().min(9).max(10).messages({
+  phone: joi.string().required().messages({
     "string.empty": "Phone không được để trống",
     "any.required": "Trường phone là bắt buộc",
-    "string.min": "Phone không đúng định dạng",
-    "string.max": "Phone không đúng định dạng",
   }),
   password: joi.string().required().min(6).messages({
     "string.empty": "Mật khẩu không được để trống",
