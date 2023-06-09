@@ -25,6 +25,7 @@ const routes: Routes = [
     component: BaseLayoutComponent,
     children: [
       { path: '', component: HomePageComponent },
+      { path: 'home', component: HomePageComponent },
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'contact', component: ContactComponent },
