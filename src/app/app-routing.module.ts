@@ -18,6 +18,7 @@ import { ProductDetailComponent } from './page/base/product-detail/product-detai
 import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { UserListComponent } from './page/admin/users/user-list.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,7 @@ const routes: Routes = [
       { path: 'products', component: ProductListComponent },
       { path: 'products/add', component: ProductAddComponent },
       { path: 'products/:id/edit', component: ProductEditComponent },
+      { path: 'users', component: UserListComponent },
     ],
   },
   { path: '**', component: PageNotFoundComponent },
