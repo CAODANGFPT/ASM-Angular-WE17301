@@ -17,38 +17,14 @@
         <th>Action</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Product 1</td>
+    <tbody *ngIf="products && products.length">
+      <tr *ngFor="let product of products; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ product.name }}</td>
         <td>
-          <img
-            width="100px"
-            src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE.jpg"
-            alt=""
-          />
+          <img width="100px" [src]="product.image" alt="" />
         </td>
-        <td>200</td>
-        <td>
-          <button class="btn-sua" routerLink="1/edit">Sửa</button>
-          <button class="btn-xoa">Xóa</button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Product 1</td>
-        <td><img src="" alt="" /></td>
-        <td>300</td>
-        <td>
-          <button class="btn-sua" routerLink="1/edit">Sửa</button>
-          <button class="btn-xoa">Xóa</button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Product 1</td>
-        <td><img src="" alt="" /></td>
-        <td>400</td>
+        <td>{{ product.priceNew }}</td>
         <td>
           <button class="btn-sua" routerLink="1/edit">Sửa</button>
           <button class="btn-xoa">Xóa</button>
