@@ -17,4 +17,15 @@ export class ProductListComponent {
       (error) => console.log(error)
     );
   }
+  confirmAndRemoveItem(productId: any) {
+    if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) {
+      this.removeItem(productId);
+    }
+  }
+  removeItem(id: any) {
+    this.productService.deleteProduct(id).subscribe(() => {
+      alert('Bạn đã xóa thành công');
+      this.products = this.products.filter((item) => item._id != id);
+    });
+  }
 }
