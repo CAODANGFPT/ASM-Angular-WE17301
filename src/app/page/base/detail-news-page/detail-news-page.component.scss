@@ -313,6 +313,7 @@
             textarea {
               display: block;
               max-width: 100%;
+              min-width: 100%;
               width: 100%;
               min-height: 170px;
               @include Size(1rem, 0, 1.5);

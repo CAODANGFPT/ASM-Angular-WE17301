@@ -114,8 +114,10 @@
             }
           }
           textarea {
-            width: 95%;
-            height: 105px;
+            max-width: 95%;
+            min-width: 95%;
+            width: 100%;
+            min-height: 105px;
             margin-top: 4px;
             padding: 0.5rem 0rem 0.4rem 1rem;
             border: 1px solid $BrightGray;
