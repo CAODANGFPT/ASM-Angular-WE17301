@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 div {
-    background-color: $Cultured;
+  background-color: $Cultured;
 
   .breadCrumbs {
     @include Flex(flex, flex-start, center);
@@ -152,8 +152,10 @@ div {
             }
             &-slider {
               border: 1px solid $BrightGray;
+              background-color: white;
               width: 100%;
               .image {
+                background-color: white;
                 position: relative;
                 cursor: pointer;
                 img {
@@ -175,6 +177,7 @@ div {
               }
               .price {
                 @include Flex(flex, space-between, center);
+                background-color: white;
                 padding: 15px;
                 &-new {
                   @include Size(18px, 700, 20px);
