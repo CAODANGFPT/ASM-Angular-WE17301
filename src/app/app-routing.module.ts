@@ -16,7 +16,7 @@ import { ProductPageComponent } from './page/base/product-page/product-page.comp
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import { IntroducePageComponent } from './page/base/introduce-page/introduce-page.component';
-
+import { DetailNewsPageComponent } from './page/base/detail-news-page/detail-news-page.component';
 const routes: Routes = [
   {
     path: '',
@@ -29,6 +29,7 @@ const routes: Routes = [
       { path: 'introduce', component: IntroducePageComponent },
       { path: 'cart', component: CartPageComponent },
       { path: 'news', component: NewsPageComponent },
+      { path: 'news/:id', component: DetailNewsPageComponent },
       { path: 'products', component: ProductPageComponent },
     ],
   },
