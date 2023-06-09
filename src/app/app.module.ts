@@ -31,6 +31,9 @@ import { ProductDetailComponent } from './page/base/product-detail/product-detai
 import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { CategoriListComponent } from './page/admin/categories/categori-list/categori-list.component';
+import { CategoriAddComponent } from './page/admin/categories/categori-add/categori-add.component';
+import { CategoriEditComponent } from './page/admin/categories/categori-edit/categori-edit.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,9 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
     ProductPageComponent,
     ProductDetailComponent,
     DetailNewsPageComponent,
+    CategoriListComponent,
+    CategoriAddComponent,
+    CategoriEditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule,HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],
