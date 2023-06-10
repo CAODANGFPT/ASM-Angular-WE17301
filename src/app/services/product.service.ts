@@ -6,39 +6,17 @@ import { IProduct } from '../interfaces/Product';
   providedIn: 'root',
 })
 export class ProductService {
-  private accessToken: string = '';
-
   constructor(private http: HttpClient) {
-    const user = localStorage.getItem('userData');
-    if (user) {
-      const response = JSON.parse(user);
-      this.accessToken = response.accessToken;
-    }
   }
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(`http://localhost:8080/api/products`);
   }
 
   addProduct(product: IProduct): Observable<IProduct> {
-    return this.http.post<IProduct>(
-      `http://localhost:8080/api/products`,
-      product,
-      {
-        headers: {
-          Authorization: `Bearer ${this.accessToken}`,
-        },
-      }
-    );
+    return this.http.post<IProduct>(`http://localhost:8080/api/products`,product);
   }
 
   deleteProduct(id: number | string): Observable<IProduct> {
-    return this.http.delete<IProduct>(
-      `http://localhost:8080/api/products/${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${this.accessToken}`,
-        },
-      }
-    );
+    return this.http.delete<IProduct>(`http://localhost:8080/api/products/${id}`);
   }
 }

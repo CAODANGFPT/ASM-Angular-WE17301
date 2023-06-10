@@ -30,7 +30,7 @@ export class LoginComponent {
     if (this.formSignin.valid) {
       this.authService.signin(this.formSignin.value).subscribe((data: any) => {
         alert('Đăng Nhập Thành Công !');
-        localStorage.setItem('userData', JSON.stringify(data));
+        localStorage.setItem('userInfo', JSON.stringify(data));
         if (data.user && data.user.role === 'admin') {
           this.router.navigate(['/admin']);
         } else {
