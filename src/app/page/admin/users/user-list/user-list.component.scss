@@ -1,5 +1,5 @@
-@import "../../../../../public/scss/utils/functions.scss";
-@import "../../../../../public/scss/utils/variables.scss";
+@import "../../../../../../public/scss/utils/functions.scss";
+@import "../../../../../../public/scss/utils/variables.scss";
 .user-content {
   h1 {
     @include Size(3em, 400, 50px);
