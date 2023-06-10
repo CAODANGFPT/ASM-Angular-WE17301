@@ -30,4 +30,7 @@ export class AuthService {
       })
     );
   }
+  isAuthenticated(): any {
+    return JSON.parse(localStorage.getItem('userInfo') || '{}');
+  }
 }
