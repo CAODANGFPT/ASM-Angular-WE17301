@@ -2,6 +2,8 @@
 @import "./../../../../../../public/scss/utils/variables.scss";
 
 .product-add {
+  font-family: $Geologica;
+  margin-top: 70px;
   h1 {
     @include Size(3em, 400, 50px);
   }
