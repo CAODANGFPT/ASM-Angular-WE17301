@@ -2,6 +2,8 @@
 @import "./../../../../../../public/scss/utils/variables.scss";
 
 .product-add {
+  font-family: $Geologica;
+  margin-top: 70px;
   h1 {
     @include Size(3em, 400, 50px);
   }
@@ -45,6 +47,7 @@
           border-radius: 30px;
           color: white;
           font-size: 1rem;
+          cursor: pointer;
           box-shadow: 0 3px 3px 3px rgb(0 0 0/5%);
           &:hover {
             background-color: #97cdcd;
