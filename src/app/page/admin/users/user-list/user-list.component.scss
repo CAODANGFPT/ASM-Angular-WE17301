@@ -129,19 +129,19 @@
               width: 30%;
             }
             &:nth-of-type(2)::before {
-              content: "Name";
+              content: "Tên";
               width: 30%;
             }
             &:nth-of-type(3)::before {
-              content: "Image";
+              content: "Email";
               width: 30%;
             }
             &:nth-of-type(4)::before {
-              content: "Price";
+              content: "Vai trò";
               width: 30%;
             }
             &:nth-of-type(5)::before {
-              content: "Action";
+              content: "Chức năng";
               width: 30%;
             }
           }
