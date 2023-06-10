@@ -6,10 +6,11 @@ export const productSchema = joi.object({
     "String.empty": "Tên không được để trống",
     "any.required": "Trường tên là bắt buộc",
   }),
-  price: joi.number().required().messages({
+  priceNew: joi.number().required().messages({
     "Number.empty": "Price không được để trống",
     "any.required": "Trường price là bắt buộc",
   }),
+  priceOld: joi.number(),
   quantity: joi.number().required().messages({
     "Number.empty": "Quantity không được để trống",
     "any.required": "Trường quantity là bắt buộc",

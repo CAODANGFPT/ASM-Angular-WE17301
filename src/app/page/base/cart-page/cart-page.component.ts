@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface ICard{
+interface ICard {
   products: IProduct[];
   total: number;
 }

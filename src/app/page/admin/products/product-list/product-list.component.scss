@@ -2,6 +2,8 @@
 @import "./../../../../../../public/scss/utils/variables.scss";
 
 .product-content {
+  font-family: $Geologica;
+  margin-top: 70px;
   h1 {
     @include Size(3em, 400, 50px);
   }
@@ -17,6 +19,7 @@
       border-radius: 30px;
       height: 100%;
       box-shadow: 0 3px 3px 3px rgb(0 0 0/5%);
+      cursor: pointer;
       &:hover {
         background-color: $MiddleBlueGreen;
       }
@@ -28,6 +31,7 @@
       border-radius: 30px;
       height: 50px;
       overflow: hidden;
+      cursor: pointer;
       box-shadow: 0 3px 3px 3px rgb(0 0 0/5%);
       input {
         @include Size(1em, 400, 20px);
@@ -51,8 +55,8 @@
   .table {
     border: 0px;
     border-collapse: collapse;
-    margin: 25px 0;
-    width: 80%;
+    margin: 25px auto 25px 0;
+    width: 90%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border-radius: 10px 10px 0 0;
     overflow: hidden;
@@ -71,6 +75,9 @@
     tbody {
       tr {
         border-bottom: 1px solid $Gainsboro;
+        .Id {
+          text-align: center;
+        }
         td {
           font-size: 1rem;
           padding: 12px 15px;
@@ -83,6 +90,7 @@
           .btn-sua {
             background-color: $Keppel;
             color: white;
+            cursor: pointer;
             &:hover {
               background-color: $MiddleBlueGreen;
             }
@@ -90,6 +98,7 @@
           .btn-xoa {
             background-color: $PastelRed;
             color: white;
+            cursor: pointer;
             &:hover {
               background-color: $LightSalmonPink;
             }

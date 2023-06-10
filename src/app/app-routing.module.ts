@@ -21,6 +21,8 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
 import { CategoriListComponent } from './page/admin/categories/categori-list/categori-list.component';
 import { CategoriAddComponent } from './page/admin/categories/categori-add/categori-add.component';
 import { CategoriEditComponent } from './page/admin/categories/categori-edit/categori-edit.component';
+import { UserListComponent } from './page/admin/users/user-list/user-list.component';
+import { UserEditComponent } from './page/admin/users/user-edit/user-edit.component';
 
 const routes: Routes = [
   {
@@ -52,6 +54,8 @@ const routes: Routes = [
       { path: 'categories', component: CategoriListComponent },
       { path: 'categories/add', component: CategoriAddComponent },
       { path: 'categories/:id/edit', component: CategoriEditComponent },
+      { path: 'users', component: UserListComponent },
+      { path: 'users/:id/edit', component: UserEditComponent },
     ],
   },
   { path: '**', component: PageNotFoundComponent },

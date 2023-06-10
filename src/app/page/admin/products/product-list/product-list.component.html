@@ -11,47 +11,27 @@
     <thead>
       <tr>
         <th>STT</th>
-        <th>Name</th>
-        <th>Image</th>
-        <th>Price</th>
-        <th>Action</th>
+        <th>Tên sản phảm</th>
+        <th>Ảnh</th>
+        <th>Giá mới</th>
+        <th>Giá cũ</th>
+        <th>Chức năng</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Product 1</td>
+    <tbody *ngIf="products && products.length">
+      <tr *ngFor="let product of products; index as i">
+        <td class="Id">{{ i + 1 }}</td>
+        <td>{{ product.name }}</td>
         <td>
-          <img
-            width="100px"
-            src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE.jpg"
-            alt=""
-          />
+          <img width="100px" height="auto" [src]="product.image" alt="" />
         </td>
-        <td>200</td>
+        <td>{{ product.priceNew }}</td>
+        <td>{{ product.priceOld }}</td>
         <td>
           <button class="btn-sua" routerLink="1/edit">Sửa</button>
-          <button class="btn-xoa">Xóa</button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Product 1</td>
-        <td><img src="" alt="" /></td>
-        <td>300</td>
-        <td>
-          <button class="btn-sua" routerLink="1/edit">Sửa</button>
-          <button class="btn-xoa">Xóa</button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Product 1</td>
-        <td><img src="" alt="" /></td>
-        <td>400</td>
-        <td>
-          <button class="btn-sua" routerLink="1/edit">Sửa</button>
-          <button class="btn-xoa">Xóa</button>
+          <button class="btn-xoa" (click)="confirmAndRemoveItem(product._id)">
+            Xóa
+          </button>
         </td>
       </tr>
     </tbody>

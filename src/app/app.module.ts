@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
+import { UserListComponent } from './page/admin/users/user-list/user-list.component';
 import { CartPageComponent } from './page/base/cart-page/cart-page.component';
 import { ContactComponent } from './page/base/contact/contact.component';
 import { DetailNewsPageComponent } from './page/base/detail-news-page/detail-news-page.component';
@@ -67,8 +68,15 @@ import { CategoriEditComponent } from './page/admin/categories/categori-edit/cat
     CategoriListComponent,
     CategoriAddComponent,
     CategoriEditComponent,
+    UserListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule,HttpClientModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
