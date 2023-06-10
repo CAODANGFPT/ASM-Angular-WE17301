@@ -17,4 +17,15 @@ export class CategoriListComponent {
       (error) => console.log(error)
     );
   }
+  confirmAndRemoveItem(categoryId: any) {
+    if (confirm('Bạn có chắc chắn muốn xóa danh mục này?')) {
+      this.removeItem(categoryId);
+    }
+  }
+  removeItem(id: any) {
+    this.CategoryService.deleteCategory(id).subscribe(() => {
+      alert('Bạn đã xóa thành công');
+      this.categories = this.categories.filter((item) => item._id != id);
+    });
+  }
 }

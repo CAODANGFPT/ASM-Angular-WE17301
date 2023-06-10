@@ -12,4 +12,9 @@ export class CategoryService {
   getCategory(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>(`http://localhost:8080/api/categories`);
   }
+  deleteCategory(id: number | string): Observable<ICategory> {
+    return this.http.delete<ICategory>(
+      `http://localhost:8080/api/categories/${id}`
+    );
+  }
 }
