@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthInterceptor } from './auth.interceptor';
 import { AdvertisementComponent } from './components/advertisement/advertisement.component';
 import { FooterAdminComponent } from './components/layout/admin/footer-admin/footer-admin.component';
 import { HeaderAdminComponent } from './components/layout/admin/header-admin/header-admin.component';
@@ -16,10 +17,14 @@ import { ModelProductsOutstandingComponent } from './components/model-products-o
 import { ModelSupportComponent } from './components/model-support/model-support.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
+import { CategoriAddComponent } from './page/admin/categories/categori-add/categori-add.component';
+import { CategoriEditComponent } from './page/admin/categories/categori-edit/categori-edit.component';
+import { CategoriListComponent } from './page/admin/categories/categori-list/categori-list.component';
 import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
+import { UserListComponent } from './page/admin/users/user-list/user-list.component';
 import { CartPageComponent } from './page/base/cart-page/cart-page.component';
 import { ContactComponent } from './page/base/contact/contact.component';
 import { DetailNewsPageComponent } from './page/base/detail-news-page/detail-news-page.component';
@@ -31,7 +36,6 @@ import { ProductDetailComponent } from './page/base/product-detail/product-detai
 import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
-import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -62,9 +66,21 @@ import { AuthInterceptor } from './auth.interceptor';
     ProductPageComponent,
     ProductDetailComponent,
     DetailNewsPageComponent,
+    CategoriListComponent,
+    CategoriAddComponent,
+    CategoriEditComponent,
+    UserListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule,HttpClientModule, FormsModule, ReactiveFormsModule],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

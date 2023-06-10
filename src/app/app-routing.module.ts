@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from './auth.guard';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
+import { CategoriAddComponent } from './page/admin/categories/categori-add/categori-add.component';
+import { CategoriEditComponent } from './page/admin/categories/categori-edit/categori-edit.component';
+import { CategoriListComponent } from './page/admin/categories/categori-list/categori-list.component';
 import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
+import { UserEditComponent } from './page/admin/users/user-edit/user-edit.component';
+import { UserListComponent } from './page/admin/users/user-list/user-list.component';
 import { CartPageComponent } from './page/base/cart-page/cart-page.component';
 import { ContactComponent } from './page/base/contact/contact.component';
 import { DetailNewsPageComponent } from './page/base/detail-news-page/detail-news-page.component';
@@ -18,7 +24,6 @@ import { ProductDetailComponent } from './page/base/product-detail/product-detai
 import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
-import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -48,6 +53,11 @@ const routes: Routes = [
       { path: 'products', component: ProductListComponent },
       { path: 'products/add', component: ProductAddComponent },
       { path: 'products/:id/edit', component: ProductEditComponent },
+      { path: 'categories', component: CategoriListComponent },
+      { path: 'categories/add', component: CategoriAddComponent },
+      { path: 'categories/:id/edit', component: CategoriEditComponent },
+      { path: 'users', component: UserListComponent },
+      { path: 'users/:id/edit', component: UserEditComponent },
     ],
   },
   { path: '**', component: PageNotFoundComponent },
