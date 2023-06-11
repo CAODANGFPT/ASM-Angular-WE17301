@@ -9,6 +9,9 @@
   }
   .form {
     margin-top: 3rem;
+    .id-none{
+      display: none;
+    }
     &-control {
       display: grid;
       grid-template-columns: 0.5fr 2fr;
@@ -35,6 +38,7 @@
         padding: 0.6rem 0.5rem 0.6rem 1rem;
         border: 0.1rem solid;
         border-radius: 5px;
+        font-family: $Geologica;
       }
       .btn {
         grid-column: 2;
@@ -55,7 +59,6 @@
         }
       }
       &-file {
-        cursor: pointer;
         width: 50%;
         div {
           display: none;
@@ -68,6 +71,7 @@
           align-items: center;
           border-radius: 30px;
           background-color: aquamarine;
+          cursor: pointer;
           i {
             font-size: 1rem;
           }

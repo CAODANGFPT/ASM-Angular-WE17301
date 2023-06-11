@@ -28,7 +28,7 @@
         <td>{{ product.priceNew }}</td>
         <td>{{ product.priceOld }}</td>
         <td>
-          <button class="btn-sua" routerLink="1/edit">Sửa</button>
+          <button class="btn-sua" routerLink="{{product._id}}/edit">Sửa</button>
           <button class="btn-xoa" (click)="confirmAndRemoveItem(product._id)">
             Xóa
           </button>
