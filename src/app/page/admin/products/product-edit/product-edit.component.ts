@@ -18,12 +18,11 @@ export class ProductEditComponent {
   valueInput: string = '';
   setValue(e: any) {
     this.valueInput = e.target.value;
-    console.log(this.valueInput);
   }
   formProduct = this.fb.group({
     _id: ['', [Validators.required]],
     name: ['', [Validators.required]],
-    image: ['', [Validators.required]],
+    image: [""],
     priceNew: [[Validators.required]],
     priceOld: [],
     quantity: [[Validators.required]],
@@ -47,7 +46,6 @@ export class ProductEditComponent {
       const id = String(param.get('id'));
       this.ProductService.getProductsById(id).subscribe(
         (product: any) => {
-          console.log(product.data);
           this.formProduct.patchValue({
             _id: product.data._id,
           });
@@ -94,7 +92,6 @@ export class ProductEditComponent {
         alert('Thêm sản phẩm thành công');
         this.router.navigate(['/admin/products']);
       });
-      console.log(product);
     }
   }
 }
