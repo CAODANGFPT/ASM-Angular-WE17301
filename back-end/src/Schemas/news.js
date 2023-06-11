@@ -1,6 +1,6 @@
 import joi from "joi";
 
-export const newSchema = joi.object({
+export const newsSchema = joi.object({
   _id: joi.string(),
   name: joi.string().required().messages({
     "String.empty": "Tên không được để trống",

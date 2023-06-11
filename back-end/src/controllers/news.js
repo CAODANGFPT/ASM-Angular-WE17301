@@ -1,14 +1,14 @@
-import { newSchema } from "../Schemas/new";
-import New from "./../models/new";
+import { newsSchema } from "../Schemas/news";
+import News from "../models/news";
 export const create = async (req, res) => {
   try {
-    const { error } = newSchema.validate(req.body);
+    const { error } = newsSchema.validate(req.body);
     if (error) {
       res.json({
         message: error.details[0].message,
       });
     }
-    const data = await New.create(req.body);
+    const data = await News.create(req.body);
     return res.status(201).json({
       message: "Thêm tin tức thành công",
       data,
@@ -22,7 +22,7 @@ export const create = async (req, res) => {
 
 export const get = async (req, res) => {
   try {
-    const data = await New.findById(req.params.id);
+    const data = await News.findById(req.params.id);
     if (!data) {
       return res.status(400).json({
         message: "Không có danh mục nào",
@@ -41,7 +41,7 @@ export const get = async (req, res) => {
 };
 export const getAll = async (req, res) => {
   try {
-    const data = await New.find();
+    const data = await News.find();
     return res.status(201).json({
       message: "Danh sách",
       data,
@@ -54,14 +54,14 @@ export const getAll = async (req, res) => {
 };
 export const update = async (req, res) => {
   try {
-    const { error } = newSchema.validate(req.body);
+    const { error } = newsSchema.validate(req.body);
     if (error) {
       res.status(400).
         json({
           message: error.details[0].message,
         });
     }
-    const data = await New.findOneAndUpdate(
+    const data = await News.findOneAndUpdate(
       { _id: req.params.id },
       req.body,
       { new: true }
@@ -78,7 +78,7 @@ export const update = async (req, res) => {
 };
 export const remove = async (req, res) => {
   try {
-    const data = await New.findOneAndRemove({ _id: req.params.id });
+    const data = await News.findOneAndRemove({ _id: req.params.id });
     return res.json({
       message: "Xóa tin tức thành công",
       data,
