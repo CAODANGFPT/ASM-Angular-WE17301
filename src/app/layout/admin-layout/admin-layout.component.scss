@@ -253,7 +253,8 @@
       width: 100% !important;
       padding: 2rem 1.5rem;
       background-color: #f1f5f9;
-      height: 100vh;
+      min-height: 100vh;
+      height: auto;
     }
   }
   @include max-screen($xxl) {

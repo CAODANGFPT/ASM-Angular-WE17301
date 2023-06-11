@@ -12,6 +12,14 @@ export class ProductService {
     return this.http.get<IProduct[]>(`http://localhost:8080/api/products`);
   }
 
+  getProductsById(id: string): Observable<IProduct> {
+    return this.http.get<IProduct>(`http://localhost:8080/api/products/${id}`);
+  }
+
+  updateProducts(product: IProduct): Observable<IProduct> {
+    return this.http.put<IProduct>(`http://localhost:8080/api/products/${product._id}`, product);
+  }
+
   addProduct(product: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>(`http://localhost:8080/api/products`,product);
   }
