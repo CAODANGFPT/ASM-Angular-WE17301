@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./news-edit.component.scss']
 })
 export class NewsEditComponent {
-
+  
 }
