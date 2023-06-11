@@ -7,8 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { AdvertisementComponent } from './components/advertisement/advertisement.component';
-import { FooterAdminComponent } from './components/layout/admin/footer-admin/footer-admin.component';
-import { HeaderAdminComponent } from './components/layout/admin/header-admin/header-admin.component';
 import { FooterComponent } from './components/layout/base/footer/footer.component';
 import { HeaderComponent } from './components/layout/base/header/header.component';
 import { ModelMenuProductsComponent } from './components/model-menu-products/model-menu-products.component';
@@ -47,8 +45,6 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
     DashboardComponent,
     HomePageComponent,
     PageNotFoundComponent,
-    HeaderAdminComponent,
-    FooterAdminComponent,
     ProductAddComponent,
     ProductListComponent,
     ProductEditComponent,

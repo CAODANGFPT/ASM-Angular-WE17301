@@ -50,13 +50,21 @@
             alt=""
           />
         </div>
-        <ul class="nav-row-right-signupin-text">
-          <a routerLink="login" class="nav-row-right-signupin-text-li"
+        <ul *ngIf="!userInfo || !userInfo.accessToken" class="nav-row-right-signupin-text">
+          <a routerLink="login" class="nav-row-right-signupin-text-li "
             >Đăng nhập</a
           >
           <span>/</span>
-          <a routerLink="signup" class="nav-row-right-signupin-text-li"
+          <a routerLink="signup" class="nav-row-right-signupin-text-li "
             >Đăng ký</a
+          >
+        </ul>
+        <ul *ngIf="userInfo && userInfo.accessToken" class="nav-row-right-signupin-text">
+          <a   class="nav-row-right-signupin-text-li user"
+            >{{userInfo.user.name}}</a>
+          <span>/</span>
+          <a (click)="onHandleLogout()" class="nav-row-right-signupin-text-li logout"
+            >Đăng xuất</a
           >
         </ul>
       </div>

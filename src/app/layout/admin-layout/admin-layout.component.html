@@ -1,7 +1,7 @@
 <input type="checkbox" id="nav-toggle" />
 <div class="header-admin">
   <div class="sidebar">
-    <div class="sidebar-brand">
+    <div class="sidebar-brand" routerLink="/home" [queryParamsHandling]="'preserve'">
       <h1><span class="fas fa-desktop"></span> <span>Logo</span></h1>
     </div>
     <div class="sidebar-menu">
@@ -44,7 +44,7 @@
         <img src="" width="40px" height="40px" alt="" />
         <div>
           <h4>Admin</h4>
-          <small>Super admin</small>
+          <small (click)="onHandleLogout()">Đăng xuất</small>
         </div>
       </div>
     </header>
