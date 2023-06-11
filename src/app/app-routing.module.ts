@@ -24,6 +24,9 @@ import { ProductDetailComponent } from './page/base/product-detail/product-detai
 import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { NewsListComponent } from './page/admin/news/news-list/news-list.component';
+import { NewsAddComponent } from './page/admin/news/news-add/news-add.component';
+import { NewsEditComponent } from './page/admin/news/news-edit/news-edit.component';
 
 const routes: Routes = [
   {
@@ -56,6 +59,9 @@ const routes: Routes = [
       { path: 'categories', component: CategoriListComponent },
       { path: 'categories/add', component: CategoriAddComponent },
       { path: 'categories/:id/edit', component: CategoriEditComponent },
+      { path: 'news', component: NewsListComponent },
+      { path: 'news/add', component: NewsAddComponent },
+      { path: 'news/:id/edit', component: NewsEditComponent },
       { path: 'users', component: UserListComponent },
       { path: 'users/:id/edit', component: UserEditComponent },
     ],
