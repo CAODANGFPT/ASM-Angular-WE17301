@@ -15,29 +15,13 @@
         <Th>Chức năng</Th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>categori 1</td>
+    <tbody *ngIf="categories && categories.length">
+      <tr *ngFor="let category of categories; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ category.name }}</td>
         <td>
           <button class="btn-sua" routerLink="1/edit">Sửa</button>
-          <button class="btn-xoa">Xóa</button>
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>categori 2</td>
-        <td>
-          <button class="btn-sua" routerLink="1/edit">Sửa</button>
-          <button class="btn-xoa">Xóa</button>
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>categori 3</td>
-        <td>
-          <button class="btn-sua" routerLink="1/edit">Sửa</button>
-          <button class="btn-xoa">Xóa</button>
+          <button class="btn-xoa" (click)="confirmAndRemoveItem(category._id)">Xóa</button>
         </td>
       </tr>
     </tbody>
