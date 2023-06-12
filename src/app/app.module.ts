@@ -36,6 +36,9 @@ import { ProductDetailComponent } from './page/base/product-detail/product-detai
 import { ProductPageComponent } from './page/base/product-page/product-page.component';
 import { SignupComponent } from './page/base/signup/signup.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { NewsListComponent } from './page/admin/news/news-list/news-list.component';
+import { NewsAddComponent } from './page/admin/news/news-add/news-add.component';
+import { NewsEditComponent } from './page/admin/news/news-edit/news-edit.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +73,9 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
     CategoryAddComponent,
     CategoryEditComponent,
     UserListComponent,
+    NewsListComponent,
+    NewsAddComponent,
+    NewsEditComponent,
   ],
   imports: [
     BrowserModule,

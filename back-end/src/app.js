@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import authRouter from "./routes/auth";
 import categoryRouter from "./routes/category";
 import productRouter from "./routes/product";
+import newsRouter from "./routes/news";
 
 const app = express();
 
@@ -15,6 +16,8 @@ app.use(cors());
 app.use("/api", productRouter);
 app.use("/api", authRouter);
 app.use("/api", categoryRouter);
+app.use("/api", newsRouter);
+
 
 mongoose.connect("mongodb://127.0.0.1:27017/ASM-ANGULAR");
 
