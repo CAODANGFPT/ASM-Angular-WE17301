@@ -1,31 +1,31 @@
 <div class="product-add">
-  <h1>Sửa tài khoản</h1>
-  <form action="" class="form">
-    <div class="form-control">
-      <label for="">Tên:</label>
-      <div class="input">Bùi Quỳnh</div>
-    </div>
-
-    <div class="form-control">
-      <label for="">Email:</label>
-      <div class="input">quyenb596@gmail.com</div>
-    </div>
-    <div class="form-control">
-      <label for="">Mật khẩu:</label>
-      <div class="input">090807</div>
-    </div>
-
-    <div class="form-control">
-      <label for="">Vai trò:</label>
-      <select name="role" id="">
-        <option value="1">member</option>
-        <option value="2">Admin</option>
-      </select>
-    </div>
-    <div class="form-control">
-      <div class="btn">
-        <input width="300px" class="btn-add" type="submit" value="Sửa" />
+    <h1>Sửa tài khoản</h1>
+    <form     class="formUser"
+    [formGroup]="formUser" (ngSubmit)="onHandleSubmit()" class="form">
+      <div class="form-control">
+        <label for="">Tên:</label>
+        <div class="input">{{users.name}}</div>
       </div>
-    </div>
-  </form>
-</div>
+      <div class="form-control">
+        <label for="">Email:</label>
+        <div class="input">{{users.email}}</div>
+      </div>
+      <div class="form-control">
+        <label for="">Số điện thoại:</label>
+        <div class="input">{{users.phone}}</div>
+      </div>
+      <div class="form-control">
+        <label for="">Vai trò:</label>
+        <select name="role" id="role" formControlName="role">
+          <option value="member">member</option>
+          <option value="admin">admin</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <div class="btn">
+          <input width="300px" class="btn-add" type="submit" value="Sửa" />
+        </div>
+      </div>
+    </form>
+  </div>
+  
