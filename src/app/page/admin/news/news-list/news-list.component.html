@@ -4,7 +4,7 @@
     <button class="action-addProduct" routerLink="add">Thêm bài viết</button>
     <div class="action-search">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="search" placeholder="Tìm kiếm ......" />
+      <input type="search" placeholder="Tìm kiếm ......" (input)="onSearchChange($event)"/>
     </div>
   </div>
   <table border="0" class="table">
@@ -33,6 +33,11 @@
           <button class="btn-sua" routerLink="{{news._id}}/edit">Sửa</button>
           <button class="btn-xoa" (click)="confirmAndRemoveItem(news._id)">Xóa</button>
         </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="news && !news.length">
+      <tr>
+        <td colspan="6" class="no-results">Không tìm thấy kết quả</td>
       </tr>
     </tbody>
   </table>

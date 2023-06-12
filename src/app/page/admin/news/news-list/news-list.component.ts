@@ -9,6 +9,7 @@ import { INews } from 'src/app/interfaces/News';
 })
 export class NewsListComponent {
   news: INews[] = [];
+  newsList: INews[] = [];
   constructor(private NewsService: NewsService) {
     this.NewsService.getNews().subscribe(
       (data: any) => {
@@ -20,9 +21,21 @@ export class NewsListComponent {
           data.data[i].date = formattedDate;
         }
         this.news = data.data;
+        this.newsList = data.data;
       },
       (error) => console.log(error)
     );
+  }
+
+  onSearchChange(event: Event) {
+    const searchValue = (event.target as HTMLInputElement).value;
+    if (searchValue) {
+      this.news = this.news.filter((news) => {
+        return news.name.toLowerCase().includes(searchValue.toLowerCase());
+      });
+    } else {
+      this.news = this.newsList;
+    }
   }
 
   confirmAndRemoveItem(productId: any) {
@@ -30,7 +43,7 @@ export class NewsListComponent {
       this.removeItem(productId);
     }
   }
-  
+
   removeItem(id: any) {
     this.NewsService.deleteNews(id).subscribe(() => {
       alert('Bạn đã xóa thành công');
