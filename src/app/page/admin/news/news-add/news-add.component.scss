@@ -40,6 +40,9 @@
         border-radius: 5px;
         font-family: $Geologica;
       }
+      .date{
+        font-family: $Geologica;
+      }
       .datetime {
         @include Size(1em, 500, 20px);
         padding: 0.6rem 0.5rem 0.6rem 1rem;
