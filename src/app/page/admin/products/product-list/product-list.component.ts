@@ -9,10 +9,12 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductListComponent {
   products: IProduct[] = [];
+  productList: IProduct[] = [];
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(
       (data: any) => {
         this.products = data.docs;
+        this.productList =data.docs;
       },
       (error) => console.log(error)
     );
@@ -27,5 +29,16 @@ export class ProductListComponent {
       alert('Bạn đã xóa thành công');
       this.products = this.products.filter((item) => item._id != id);
     });
+  }
+
+  onSearchChange(event: Event) {
+    const searchValue = (event.target as HTMLInputElement).value;
+    if(searchValue){
+      this.products = this.products.filter((product) => {
+        return product.name.toLowerCase().includes(searchValue.toLowerCase());
+      });
+    }else{
+      this.products = this.productList
+    }
   }
 }

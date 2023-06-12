@@ -39,6 +39,7 @@ export const signupSchema = joi.object({
 });
 
 export const userSchema = joi.object({
+  _id: joi.string(),
   name: joi.string().required().messages({
     "String.empty": "Tên không được để trống",
     "any.required": "Trường tên là bắt buộc",
