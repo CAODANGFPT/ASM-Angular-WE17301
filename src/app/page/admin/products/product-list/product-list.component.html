@@ -4,7 +4,7 @@
     <button class="action-addProduct" routerLink="add">Add products</button>
     <div class="action-search">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="search" placeholder="Search ......" />
+      <input type="search" placeholder="Search ......" (input)="onSearchChange($event)"/>
     </div>
   </div>
   <table border="0" class="table">
@@ -33,6 +33,11 @@
             Xóa
           </button>
         </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="products && !products.length">
+      <tr>
+        <td colspan="6" class="no-results">Không tìm thấy kết quả</td>
       </tr>
     </tbody>
   </table>

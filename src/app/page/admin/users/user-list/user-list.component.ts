@@ -9,13 +9,28 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserListComponent {
   users: IUser[] = [];
+  usersList: IUser[] = [];
+
   constructor(private authService: AuthService) {
     this.authService.getUser().subscribe(
       (data: any) => {
         this.users = data.data;
+        this.usersList = data.data;
       },
       (error) => console.log(error)
     );
   }
-
+  onSearchChange(event: Event) {
+    const searchValue = (event.target as HTMLInputElement).value;
+    if(searchValue){
+      this.users = this.users.filter((users) => {
+        const nameMatch = users.name.toLowerCase().includes(searchValue.toLowerCase());
+        const field1Match = users.email.toLowerCase().includes(searchValue.toLowerCase());
+        const field2Match = users.phone.toLowerCase().includes(searchValue.toLowerCase());
+        return nameMatch || field1Match || field2Match;
+      });
+    } else{
+      this.users = this.usersList
+    }
+  }
 }

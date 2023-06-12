@@ -3,7 +3,7 @@
   <div class="action">
     <div class="action-search">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="search" placeholder="Tìm kiếm ......" />
+      <input type="search" placeholder="Tìm kiếm ......" (input)="onSearchChange($event)" />
     </div>
   </div>
   <table border="0" class="table">
@@ -27,6 +27,11 @@
         <td>
           <button class="btn-sua" routerLink="1/edit">Sửa</button>
         </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="users && !users.length">
+      <tr>
+        <td colspan="6" class="no-results">Không tìm thấy kết quả</td>
       </tr>
     </tbody>
   </table>
