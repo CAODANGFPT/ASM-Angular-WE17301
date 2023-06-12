@@ -26,15 +26,28 @@ export class NewsListComponent {
       (error) => console.log(error)
     );
   }
-  
+
   onSearchChange(event: Event) {
     const searchValue = (event.target as HTMLInputElement).value;
-    if(searchValue){
+    if (searchValue) {
       this.news = this.news.filter((news) => {
         return news.name.toLowerCase().includes(searchValue.toLowerCase());
       });
-    } else{
-      this.news = this.newsList
+    } else {
+      this.news = this.newsList;
     }
+  }
+
+  confirmAndRemoveItem(productId: any) {
+    if (confirm('Bạn có chắc chắn muốn xóa bài viết này?')) {
+      this.removeItem(productId);
+    }
+  }
+
+  removeItem(id: any) {
+    this.NewsService.deleteNews(id).subscribe(() => {
+      alert('Bạn đã xóa thành công');
+      this.news = this.news.filter((item) => item._id != id);
+    });
   }
 }

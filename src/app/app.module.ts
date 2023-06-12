@@ -37,6 +37,7 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
 import { NewsListComponent } from './page/admin/news/news-list/news-list.component';
 import { NewsAddComponent } from './page/admin/news/news-add/news-add.component';
 import { NewsEditComponent } from './page/admin/news/news-edit/news-edit.component';
+import { UserEditComponent } from './page/admin/users/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { NewsEditComponent } from './page/admin/news/news-edit/news-edit.compone
     NewsListComponent,
     NewsAddComponent,
     NewsEditComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

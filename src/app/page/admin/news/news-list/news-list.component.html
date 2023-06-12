@@ -31,7 +31,7 @@
         <td>{{news.describe}}</td>
         <td>
           <button class="btn-sua" routerLink="{{news._id}}/edit">Sửa</button>
-          <button class="btn-xoa">Xóa</button>
+          <button class="btn-xoa" (click)="confirmAndRemoveItem(news._id)">Xóa</button>
         </td>
       </tr>
     </tbody>
