@@ -6,9 +6,9 @@ const router = express.Router();
 
 router.post("/signin", signin);
 router.post("/signup", signup);
-router.get("/User", getAll);
-router.get("/User/:id", get);
-router.put("/User/:id", update);
+router.get("/user", getAll);
+router.get("/user/:id", get);
+router.put("/user/:id", update);
 
 
 
