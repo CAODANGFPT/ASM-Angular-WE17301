@@ -10,11 +10,14 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductListComponent {
   products: IProduct[] = [];
   productList: IProduct[] = [];
+  totalLength:any;
+  p: number = 1;
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(
       (data: any) => {
         this.products = data.docs;
         this.productList =data.docs;
+        this.totalLength = data.docs.length;
       },
       (error) => console.log(error)
     );

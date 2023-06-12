@@ -1,0 +1,12 @@
+.pagination_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .page__number {
+    color: red;
+    cursor: pointer;
+  }
+  

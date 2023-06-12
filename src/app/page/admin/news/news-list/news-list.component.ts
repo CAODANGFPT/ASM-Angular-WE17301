@@ -10,6 +10,8 @@ import { INews } from 'src/app/interfaces/News';
 export class NewsListComponent {
   news: INews[] = [];
   newsList: INews[] = [];
+  totalLength:any;
+  p: number = 1;
   constructor(private NewsService: NewsService) {
     this.NewsService.getNews().subscribe(
       (data: any) => {
@@ -21,6 +23,7 @@ export class NewsListComponent {
           data.data[i].date = formattedDate;
         }
         this.news = data.data;
+        this.totalLength = data.data.length;
         this.newsList = data.data;
       },
       (error) => console.log(error)

@@ -9,12 +9,14 @@ import { CategoryService } from 'src/app/services/category.service';
 export class CategoryListComponent {
   categories: ICategory[] = [];
   categoriesList: ICategory[] = [];
-  
+  totalLength:any;
+  p: number = 1;
   constructor(private CategoryService: CategoryService) {
     this.CategoryService.getCategory().subscribe(
       (data: any) => {
         this.categories = data.data;
         this.categoriesList = data.data;
+        this.totalLength = data.data.length;
       },
       (error) => console.log(error)
     );
