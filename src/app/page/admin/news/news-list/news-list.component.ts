@@ -24,4 +24,17 @@ export class NewsListComponent {
       (error) => console.log(error)
     );
   }
+
+  confirmAndRemoveItem(productId: any) {
+    if (confirm('Bạn có chắc chắn muốn xóa bài viết này?')) {
+      this.removeItem(productId);
+    }
+  }
+  
+  removeItem(id: any) {
+    this.NewsService.deleteNews(id).subscribe(() => {
+      alert('Bạn đã xóa thành công');
+      this.news = this.news.filter((item) => item._id != id);
+    });
+  }
 }
