@@ -11,11 +11,8 @@ export class AuthService {
   signin(user: any) {
     return this.http.post('http://localhost:8080/api/signin', user).pipe(
       catchError((error) => {
-        if (error.status === 400) {
-          alert('Tài Khoản không tồn tại');
-        } else if (error.status === 401) {
-          alert('Sai Mật Khẩu');
-        }
+        alert('Tài Khoản mật khẩu không chính xác');
+
         return throwError(error);
       })
     );
