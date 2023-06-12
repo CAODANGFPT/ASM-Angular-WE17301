@@ -12,16 +12,18 @@
         <th>STT</th>
         <th>Tên</th>
         <th>Email</th>
+        <th>Số điện thoại</th>
         <th>Vai trò</th>
         <th>Chức năng</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Bùi Quỳnh</td>
-        <td>quyenb596@mail.com</td>
-        <td>admin</td>
+    <tbody *ngIf="users && users.length">
+      <tr *ngFor="let user of users; index as i">
+        <td>{{i +1}}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.role }}</td>
         <td>
           <button class="btn-sua" routerLink="1/edit">Sửa</button>
         </td>
