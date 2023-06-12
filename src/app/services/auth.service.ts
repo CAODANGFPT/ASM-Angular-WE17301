@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { IUser } from '../interfaces/User';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +28,13 @@ export class AuthService {
       })
     );
   }
+
+  getUser(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(`http://localhost:8080/api/user`);
+  }
   isAuthenticated(): any {
     return JSON.parse(localStorage.getItem('userInfo') || '{}');
   }
+
+
 }
