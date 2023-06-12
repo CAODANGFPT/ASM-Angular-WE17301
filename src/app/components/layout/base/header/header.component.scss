@@ -71,6 +71,7 @@
 }
 .nav {
   margin: 10px;
+  font-family: $Geologica;
   &-row {
     @include Flex(flex, space-around, flex-end);
     max-width: 1200px;
