@@ -38,6 +38,8 @@ import { NewsListComponent } from './page/admin/news/news-list/news-list.compone
 import { NewsAddComponent } from './page/admin/news/news-add/news-add.component';
 import { NewsEditComponent } from './page/admin/news/news-edit/news-edit.component';
 import { UserEditComponent } from './page/admin/users/user-edit/user-edit.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CustomPaginationComponent } from './components/custom-pagination/custom-pagination.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,8 @@ import { UserEditComponent } from './page/admin/users/user-edit/user-edit.compon
     NewsListComponent,
     NewsAddComponent,
     NewsEditComponent,
-    UserEditComponent
+    UserEditComponent,
+    CustomPaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -81,6 +84,7 @@ import { UserEditComponent } from './page/admin/users/user-edit/user-edit.compon
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

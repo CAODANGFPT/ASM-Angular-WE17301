@@ -10,12 +10,14 @@ import { AuthService } from 'src/app/services/auth.service';
 export class UserListComponent {
   users: IUser[] = [];
   usersList: IUser[] = [];
-
+  totalLength:any;
+  p: number = 1;
   constructor(private authService: AuthService) {
     this.authService.getUser().subscribe(
       (data: any) => {
         this.users = data.data;
         this.usersList = data.data;
+        this.totalLength = data.data.length;
       },
       (error) => console.log(error)
     );
