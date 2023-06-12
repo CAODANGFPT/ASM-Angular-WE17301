@@ -34,7 +34,7 @@ export class NewsAddComponent {
         name: this.formNews.get('name')?.value || '',
         image: this.formNews.get('image')?.value || '',
         author: this.formNews.get('author')?.value || '',
-        date: new Date(this.formNews.get('date')?.value as string),
+        date: this.formNews.get('date')?.value || '',
         describe: this.formNews.get('describe')?.value || '',
         description: this.formNews.get('description')?.value || '',
       };
