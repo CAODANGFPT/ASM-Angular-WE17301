@@ -9,6 +9,9 @@
   }
   .form {
     margin-top: 3rem;
+    .id-none{
+      display: none;
+    }
     &-control {
       display: grid;
       grid-template-columns: 0.5fr 2fr;

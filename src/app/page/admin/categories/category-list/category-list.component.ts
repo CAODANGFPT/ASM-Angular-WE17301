@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ICategory } from 'src/app/interfaces/Category';
 import { CategoryService } from 'src/app/services/category.service';
 @Component({
-  selector: 'app-categori-list',
-  templateUrl: './categori-list.component.html',
-  styleUrls: ['./categori-list.component.scss'],
+  selector: 'app-category-list',
+  templateUrl: './category-list.component.html',
+  styleUrls: ['./category-list.component.scss'],
 })
-export class CategoriListComponent {
+export class CategoryListComponent {
   categories: ICategory[] = [];
   constructor(private CategoryService: CategoryService) {
     this.CategoryService.getCategory().subscribe(

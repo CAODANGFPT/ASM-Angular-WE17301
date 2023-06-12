@@ -20,7 +20,7 @@
         <td>{{ i + 1 }}</td>
         <td>{{ category.name }}</td>
         <td>
-          <button class="btn-sua" routerLink="1/edit">Sửa</button>
+          <button class="btn-sua" routerLink="{{category._id}}/edit">Sửa</button>
           <button class="btn-xoa" (click)="confirmAndRemoveItem(category._id)">Xóa</button>
         </td>
       </tr>
