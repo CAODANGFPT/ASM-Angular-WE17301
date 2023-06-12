@@ -100,25 +100,12 @@
           <label class="fa-solid fa-caret-down"></label>
           <div class="header-menu-child">
             <ul class="header-menu-child-list">
-              <li class="li"><a routerLink="">demo item</a></li>
-              <li class="li">
-                <a routerLink="">demo item</a>
-                <i class="fa-solid fa-caret-down"></i>
-                <div class="list-child">
-                  <ul class="list-child-ul">
-                    <li><a routerLink="">element</a></li>
-                    <li><a routerLink="">element</a></li>
-                    <li><a routerLink="">element</a></li>
-                    <li><a routerLink="">element</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="li"><a routerLink="">demo item</a></li>
+              <li class="li" *ngFor="let item of category"><a routerLink="">{{item.name}}</a></li>
             </ul>
           </div>
         </li>
         <li>
-          <a routerLink="news">Tin tức</a><i class="fa-solid fa-caret-down"></i>
+          <a routerLink="news">Tin tức</a>
         </li>
         <li><a routerLink="contact">liên hệ</a></li>
       </ul>
