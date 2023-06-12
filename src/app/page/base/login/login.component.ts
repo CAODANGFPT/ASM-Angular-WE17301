@@ -34,7 +34,9 @@ export class LoginComponent {
         if (data.user && data.user.role === 'admin') {
           this.router.navigate(['/admin']);
         } else {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/home']).then(() => {
+            window.location.reload();
+          });
         }
       });
     }

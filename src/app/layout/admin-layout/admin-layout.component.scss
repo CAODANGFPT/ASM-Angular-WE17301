@@ -37,7 +37,6 @@
               li {
                 a {
                   padding-left: 2rem;
-
                   span:last-child {
                     display: inline;
                   }
@@ -151,6 +150,7 @@
       height: 90px;
       padding: 1rem 0rem 1rem 2rem;
       color: #0b0c10;
+      cursor: pointer;
       span {
         display: inline-block;
         padding-left: 0.5rem;
@@ -233,7 +233,11 @@
         small {
           display: inline-block;
           color: gray;
+          cursor: pointer;
           margin-top: -5px !important;
+          &:hover{
+            color: red;
+          }
         }
         h4 {
           margin: 0px;
