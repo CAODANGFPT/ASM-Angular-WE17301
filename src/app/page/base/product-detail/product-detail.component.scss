@@ -100,36 +100,27 @@ div {
         font-size: 1.3rem;
         margin-bottom: 10px;
       }
-      .th {
-        @include Flex(flex, flex-start, center);
-        @include Gap(5px, 0);
-        p {
-          @include Flex(flex, flex-start, none);
-          @include Gap(5px, 0);
-          padding-right: 5px;
-          font-size: 13px;
-          &:first-child {
-            border-right: 1px solid gray;
-          }
-          span:last-child {
-            color: $CarminePink;
-          }
-        }
-      }
       .price {
         @include Flex(flex, flex-start, flex-end);
-        @include Gap(5px, 0);
+        @include Gap(10px, 0);
         margin-top: 10px;
         border-bottom: 1px solid $BrightGray;
         padding-bottom: 5px;
         &-origin {
           text-decoration: line-through;
           font-size: 1.14286em;
+          &::after{
+            content: "đ";
+          }
         }
         &-sale {
           font-size: 1.71429em;
           color: $CarminePink;
           font-weight: 600;
+          &::after{
+            content: "đ";
+            text-decoration: underline;
+          }
         }
       }
       .mota {
@@ -362,8 +353,12 @@ div {
             color: #333;
             margin: 0 15px;
             cursor: pointer;
-            &:hover {
-              color: $CarminePink;
+            a{
+              text-decoration: none;
+              color: black;
+              &:hover {
+                color: $CarminePink;
+              }
             }
           }
           .price {
