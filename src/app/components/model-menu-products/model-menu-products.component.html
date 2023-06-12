@@ -6,55 +6,10 @@
     </div>
   </div>
   <div class="listMenu">
-    <div class="menu">
+    <div class="menu" *ngFor="let item of categories">
       <div class="icon">
         <i class="fa-solid fa-caret-right"></i>
-        <p>Bộ sưu tập mới</p>
-      </div>
-    </div>
-    <div class="menu">
-      <div class="icon">
-        <i class="fa-solid fa-caret-right"></i>
-        <p>Giày thời trang nam</p>
-      </div>
-      <i class="fa-solid fa-caret-right line"></i>
-      <div class="list-child">
-        <ul class="list-child-ul">
-          <li><a href="">element</a></li>
-          <li><a href="">element</a></li>
-          <li><a href="">element</a></li>
-          <li><a href="">element</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="menu">
-      <div class="icon">
-        <i class="fa-solid fa-caret-right"></i>
-        <p>Giày thời trang nữ</p>
-      </div>
-      <i class="fa-solid fa-caret-right line"></i>
-      <div class="list-child">
-        <ul class="list-child-ul">
-          <li><a href="">element</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="menu">
-      <div class="icon">
-        <i class="fa-solid fa-caret-right"></i>
-        <p>Giày mùa hè</p>
-      </div>
-    </div>
-    <div class="menu">
-      <div class="icon">
-        <i class="fa-solid fa-caret-right"></i>
-        <p>Giày công sở</p>
-      </div>
-    </div>
-    <div class="menu">
-      <div class="icon">
-        <i class="fa-solid fa-caret-right"></i>
-        <p>Giày thể thao</p>
+        <p>{{ item.name }}</p>
       </div>
     </div>
   </div>

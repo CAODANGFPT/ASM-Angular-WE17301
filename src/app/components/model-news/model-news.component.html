@@ -19,15 +19,16 @@
         <input type="radio" name="article-radio-btn1" id="news2" />
         <input type="radio" name="article-radio-btn1" id="news3" />
         <div
-          *ngFor="let item of modelNews"
-          [ngClass]="['article', item.id === 1 ? 'article-slide' : '']"
+          *ngFor="let item of modelNews; let i = index"
+          [ngClass]="['article', i + 1 === 1 ? 'article-slide' : '']"
+          [routerLink]="['/news/', item._id]"
         >
-          <img src="{{ item.image }}" alt="" />
-          <p class="article-title">{{ item.title }}</p>
+          <img [src]="item.image" alt="" />
+          <p class="article-title">{{ item.name }}</p>
           <div class="article-detail">
             <div class="article-detail-user">
               <i class="fa-solid fa-user"></i>
-              <p class="name-user">{{ item.user }}</p>
+              <p class="name-user">{{ item.author }}</p>
             </div>
             <div class="article-detail-date">
               <i class="fa-regular fa-calendar-days"></i>
@@ -35,7 +36,7 @@
             </div>
           </div>
           <div class="article-content">
-            {{ item.content }}
+            {{ item.describe }}
           </div>
           <p class="next"><a href="">[Đọc tiếp...]</a></p>
         </div>

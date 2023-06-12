@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-
-interface IProduct {
-  id: number;
-  image: string;
-  content: string;
-  priceNew: number;
-  priceOld: number;
-}
+import { ProductService } from 'src/app/services/product.service';
+import { IProduct } from 'src/app/interfaces/Product';
 
 @Component({
   selector: 'app-home-page',
@@ -52,70 +46,24 @@ export class HomePageComponent {
     console.log(this.product);
   }
 
-  cardProducts: IProduct[] = [
-    {
-      id: 1,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 2,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 3,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 4,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 5,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 6,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 7,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 8,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-  ];
+  productsNew: IProduct[] = [];
+  first8Products: IProduct[] = [];
+  first12Products: IProduct[] = [];
+
+  constructor(private productService: ProductService) {
+    this.productService.getProducts().subscribe(
+      (data: any) => {
+        this.productsNew = data.docs;
+        this.productsNew.sort((a: any, b: any): any => {
+          const dateA = new Date(a.createdAt);
+          const dateB = new Date(b.createdAt);
+          return dateB.getTime() - dateA.getTime();
+        });
+        this.first8Products = this.productsNew.slice(0, 8);
+        this.first12Products = this.productsNew.slice(0, 12);
+        console.log(this.first12Products);
+      },
+      (error) => console.log(error)
+    );
+  }
 }

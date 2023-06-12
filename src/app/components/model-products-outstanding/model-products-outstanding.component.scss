@@ -62,7 +62,6 @@
           @include Size(18px, 700, 20px);
           color: $CarminePink;
           &::after {
-            content: "₫";
             @include Size(18px, 700, 20px);
             color: $CarminePink;
           }
@@ -72,7 +71,6 @@
           text-decoration: line-through;
           color: #ababab;
           &::after {
-            content: "₫";
             @include Size(16px, 400, 20px);
             color: #ababab;
           }
