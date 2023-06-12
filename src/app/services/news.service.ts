@@ -10,7 +10,9 @@ import { INews } from '../interfaces/News';
 })
 export class NewsService {
   constructor(private http: HttpClient) {}
-
+  getNews(): Observable<INews[]> {
+    return this.http.get<INews[]>(`http://localhost:8080/api/news`);
+  }
   getNewsById(id: string): Observable<INews> {
     return this.http.get<INews>(`http://localhost:8080/api/news/${id}`);
   }
