@@ -10,29 +10,29 @@
       <app-advertisement />
     </div>
     <div class="news-detail-main">
-      <div class="news-detail-main-content" *ngFor="let cardItem of cardNews">
+      <div class="news-detail-main-content">
         <div class="news-detail-main-content-img">
-          <a href="" [routerLink]="['/news/', cardItem.id]">
-            <img [src]="cardItem.image" alt="" />
+          <a href="">
+            <img [src]="cardNew.image" alt="" />
           </a>
         </div>
         <div class="news-detail-main-content-info">
           <h3 class="news-detail-main-content-info-name">
             <a href="" class="news-detail-main-content-info-name-link">
-              {{ cardItem.title }}
+              {{ cardNew.title }}
             </a>
           </h3>
           <div class="news-detail-main-content-info-detail">
             <span>
-              <i class="fa-solid fa-user fa-xs"></i> {{ cardItem.author }}
+              <i class="fa-solid fa-user fa-xs"></i> {{ cardNew.author }}
             </span>
             <span
               ><i class="fa-solid fa-calendar-days"></i
-              >{{ cardItem.created_at }}</span
+              >{{ formattedDate }}</span
             >
           </div>
           <div class="news-detail-main-content-info-summary">
-            {{ cardItem.content }}
+            {{ cardNew.description }}
           </div>
         </div>
       </div>
