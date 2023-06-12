@@ -25,4 +25,8 @@ export class NewsService {
       news
     );
   }
+  
+  deleteNews(id: number | string): Observable<INews> {
+    return this.http.delete<INews>(`http://localhost:8080/api/news/${id}`);
+  }
 }
