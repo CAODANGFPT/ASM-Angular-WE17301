@@ -18,7 +18,7 @@
         </div>
         <div class="news-main-content-info">
           <h3 class="news-main-content-info-name">
-            <a href="" class="news-main-content-info-name-link">
+            <a [routerLink]="['/news/', cardItem._id]" class="news-main-content-info-name-link">
               {{ cardItem.name }}
             </a>
           </h3>
@@ -32,10 +32,10 @@
             >
           </div>
           <div class="news-main-content-info-summary">
-            {{ cardItem.describe }}
+            {{ cardItem.description }}
           </div>
           <div class="news-main-content-info-viewmore">
-            <a class="news-main-content-info-viewmore-link" href=""
+            <a class="news-main-content-info-viewmore-link" [routerLink]="['/news/', cardItem._id]"
               >Đọc thêm <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
