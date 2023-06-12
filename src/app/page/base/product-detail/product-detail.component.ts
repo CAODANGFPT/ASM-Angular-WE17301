@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
-interface IProduct {
-  id: number;
-  image: string;
-  content: string;
-  priceNew: number;
-  priceOld: number;
-}
+import { ActivatedRoute, Router } from '@angular/router';
+import { IProduct } from 'src/app/interfaces/Product';
+import { ProductService } from 'src/app/services/product.service';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -13,100 +9,57 @@ interface IProduct {
 })
 export class ProductDetailComponent {
   valueInput: number = 1;
-  
-  cardProduct: IProduct = {
-    id: 1,
-    image:
-      'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-    content: 'Giày da Converse cao cấp',
-    priceNew: 1200000,
-    priceOld: 0,
-  };
+  product: any = {};
+  productsNew: IProduct[] = [];
+  first10Products: IProduct[] = [];
 
-  cardProducts: IProduct[] = [
-    {
-      id: 1,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 2,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 3,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 4,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 5,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 6,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 7,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-    {
-      id: 8,
-      image:
-        'https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487',
-      content: 'Giày da Converse cao cấp',
-      priceNew: 1200000,
-      priceOld: 1400000,
-    },
-  ];
-  setValue(e: any) {
-    this.valueInput = parseInt(e.target.value);
-    if( e.target.value < 1){
-      this.valueInput = 1;
-    } 
+  constructor(
+    private router: Router,
+    private ProductService: ProductService,
+    private route: ActivatedRoute
+  ) {
+    this.ProductService.getProducts().subscribe(
+      (data: any) => {
+        this.productsNew = data.docs;
+        this.productsNew.sort((a:any, b:any):any => {
+          const dateA = new Date(a.createdAt);
+          const dateB = new Date(b.createdAt);
+          return dateB.getTime() - dateA.getTime();
+        });
+        this.first10Products = this.productsNew.slice(0, 8);
+        console.log(this.first10Products);
+      },
+      (error) => console.log(error)
+    );
+    this.route.paramMap.subscribe((param) => {
+      const id = String(param.get('id'));
+      this.ProductService.getProductsById(id).subscribe(
+        (product: any) => {
+          this.product = product.data;
+        },
+        (error) => console.log(error.message)
+      );
+    });
+
   }
 
+  setValue(e: any) {
+    this.valueInput = parseInt(e.target.value);
+    if (e.target.value < 1) {
+      this.valueInput = 1;
+    }
+  }
 
-  plus(event: Event){
+  plus(event: Event) {
     event.preventDefault();
-    if(this.valueInput < 100){
+    if (this.valueInput < this.product.quantity) {
       this.valueInput += 1;
     }
   }
 
-  minus(event: Event){
+  minus(event: Event) {
     event.preventDefault();
-    if(this.valueInput > 1){
+    if (this.valueInput > 1) {
       this.valueInput -= 1;
     }
   }

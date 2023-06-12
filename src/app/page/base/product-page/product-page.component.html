@@ -29,10 +29,10 @@
           </div>
           <div class="article">
             <div *ngFor="let item of cardProducts" class="article-slider">
-              <div routerLink="1" class="image">
+              <div routerLink="{{item._id}}" class="image">
                 <img [src]="item.image" alt="" />
               </div>
-              <p routerLink="1" class="content">{{ item.name }}</p>
+              <p routerLink="{{item._id}}" class="content">{{ item.name }}</p>
               <div class="price">
                 <p class="price-new">
                   {{
