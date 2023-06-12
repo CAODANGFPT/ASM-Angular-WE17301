@@ -70,17 +70,19 @@
       @include Flex(flex, center, center);
       @include Gap(30px, 30px);
       flex-direction: column;
-      @include max-screen($lg){
+      max-width: 300px;
+      @include max-screen($lg) {
         display: none;
       }
-      app-model-news{
+      app-model-news {
         font-family: $Geologica;
       }
-      app-advertisement{
+      app-advertisement {
         width: 100%;
       }
     }
     &-main {
+      width: 100%;
       &-title {
         text-transform: uppercase;
         font-size: 25px;
@@ -146,7 +148,7 @@
               font-size: 0.9rem;
               i {
                 font-size: 0.8rem;
-                margin-right: 2px;
+                margin-right: 5px;
                 color: $DarkSilver;
               }
             }

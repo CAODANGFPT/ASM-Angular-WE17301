@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class NewsService {
   constructor(private http: HttpClient) {}
-  addNews(news: INews): Observable<INews> {
-    return this.http.post<INews>(`http://localhost:8080/api/news`, news);
-  }
 
   getNews(): Observable<INews[]> {
     return this.http.get<INews[]>(`http://localhost:8080/api/news`);
+  }
+
+  addNews(news: INews): Observable<INews> {
+    return this.http.post<INews>(`http://localhost:8080/api/news`, news);
   }
 
   getNewsById(id: string): Observable<INews> {

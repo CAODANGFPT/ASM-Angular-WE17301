@@ -12,14 +12,14 @@
       <h1 class="news-main-title">tin tức</h1>
       <div class="news-main-content" *ngFor="let cardItem of cardNews">
         <div class="news-main-content-img">
-          <a href="" [routerLink]="['/news/', cardItem.id]">
+          <a href="" [routerLink]="['/news/', cardItem._id]">
             <img [src]="cardItem.image" alt="" />
           </a>
         </div>
         <div class="news-main-content-info">
           <h3 class="news-main-content-info-name">
             <a href="" class="news-main-content-info-name-link">
-              {{ cardItem.title }}
+              {{ cardItem.name }}
             </a>
           </h3>
           <div class="news-main-content-info-news-details">
@@ -28,11 +28,11 @@
             </span>
             <span
               ><i class="fa-solid fa-calendar-days"></i
-              >{{ cardItem.created_at }}</span
+              >{{ cardItem.date }}</span
             >
           </div>
           <div class="news-main-content-info-summary">
-            {{ cardItem.content }}
+            {{ cardItem.describe }}
           </div>
           <div class="news-main-content-info-viewmore">
             <a class="news-main-content-info-viewmore-link" href=""
