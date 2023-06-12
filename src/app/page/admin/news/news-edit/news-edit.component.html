@@ -1,25 +1,32 @@
 <div class="product-add">
   <h1>Sửa bài viết</h1>
-  <form action="" class="form">
+  <form
+    action=""
+    class="form"
+    [formGroup]="formNews"
+    (ngSubmit)="onHandleSubmit()"
+  >
     <div class="form-control">
       <label for="">Tên bài viết:</label>
-      <input type="text" class="name" />
+      <input type="text" formControlName="name" />
     </div>
     <div class="form-control">
       <label for="">Tên tác giả:</label>
-      <input type="text" class="name" />
+      <input type="text" formControlName="author" />
     </div>
     <div class="form-control">
       <label for="">Ảnh</label>
-      <input type="text" class="name" />
+      <input type="text" formControlName="image" />
     </div>
     <div class="form-control">
       <label for="">Ngày đăng:</label>
-      <div type="text" class="datetime">12/12/2003</div>
+      <div class="datetime">
+        {{ formattedDate }}
+      </div>
     </div>
     <div class="form-control">
       <label for="">Mô tả:</label>
-      <input type="text" class="name" />
+      <input type="text" formControlName="describe" />
     </div>
     <div class="form-control">
       <label for="">Chi tiết:</label>
