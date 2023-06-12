@@ -8,11 +8,13 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class CategoryListComponent {
   categories: ICategory[] = [];
+  categoriesList: ICategory[] = [];
+  
   constructor(private CategoryService: CategoryService) {
     this.CategoryService.getCategory().subscribe(
       (data: any) => {
         this.categories = data.data;
-        console.log(data);
+        this.categoriesList = data.data;
       },
       (error) => console.log(error)
     );
@@ -27,5 +29,15 @@ export class CategoryListComponent {
       alert('Bạn đã xóa thành công');
       this.categories = this.categories.filter((item) => item._id != id);
     });
+  }
+  onSearchChange(event: Event) {
+    const searchValue = (event.target as HTMLInputElement).value;
+    if(searchValue){
+      this.categories = this.categories.filter((categories) => {
+        return categories.name.toLowerCase().includes(searchValue.toLowerCase());
+      });
+    } else{
+      this.categories = this.categoriesList
+    }
   }
 }

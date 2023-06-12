@@ -11,7 +11,6 @@ import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
 import { ProductListComponent } from './page/admin/products/product-list/product-list.component';
-import { UserEditComponent } from './page/admin/users/user-edit/user-edit.component';
 import { UserListComponent } from './page/admin/users/user-list/user-list.component';
 import { CartPageComponent } from './page/base/cart-page/cart-page.component';
 import { ContactComponent } from './page/base/contact/contact.component';
@@ -27,6 +26,7 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
 import { NewsListComponent } from './page/admin/news/news-list/news-list.component';
 import { NewsAddComponent } from './page/admin/news/news-add/news-add.component';
 import { NewsEditComponent } from './page/admin/news/news-edit/news-edit.component';
+import { UserEditComponent } from './page/admin/users/user-edit/user-edit.component';
 
 const routes: Routes = [
   {

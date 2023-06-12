@@ -137,10 +137,14 @@
               width: 30%;
             }
             &:nth-of-type(4)::before {
-              content: "Vai trò";
+              content: "Số điện thoại";
               width: 30%;
             }
             &:nth-of-type(5)::before {
+              content: "Vai trò";
+              width: 30%;
+            }
+            &:nth-of-type(6)::before {
               content: "Chức năng";
               width: 30%;
             }
