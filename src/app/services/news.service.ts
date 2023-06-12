@@ -10,7 +10,19 @@ export class NewsService {
   getNews(): Observable<INews[]> {
     return this.http.get<INews[]>(`http://localhost:8080/api/news`);
   }
+
   addNews(news: INews): Observable<INews> {
     return this.http.post<INews>(`http://localhost:8080/api/news`, news);
+  }
+
+  getNewsById(id: string): Observable<INews> {
+    return this.http.get<INews>(`http://localhost:8080/api/news/${id}`);
+  }
+
+  updateNews(news: INews): Observable<INews> {
+    return this.http.put<INews>(
+      `http://localhost:8080/api/news/${news._id}`,
+      news
+    );
   }
 }
