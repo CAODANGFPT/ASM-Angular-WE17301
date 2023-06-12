@@ -12,6 +12,14 @@ export class CategoryService {
   getCategory(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>(`http://localhost:8080/api/categories`);
   }
+
+  getCategoryById(id: string): Observable<ICategory> {
+    return this.http.get<ICategory>(`http://localhost:8080/api/categories/${id}`);
+  }
+
+  updateCategory(category: ICategory): Observable<ICategory> {
+    return this.http.put<ICategory>(`http://localhost:8080/api/categories/${category._id}`, category);
+  }
   
   addCategory(category: ICategory): Observable<ICategory> {
     return this.http.post<ICategory>(

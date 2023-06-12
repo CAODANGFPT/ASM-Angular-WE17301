@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { CategoryService } from '../../../../services/category.service';
 import { ICategory } from '../../../../interfaces/Category';
 @Component({
-  selector: 'app-categori-add',
-  templateUrl: './categori-add.component.html',
-  styleUrls: ['./categori-add.component.scss'],
+  selector: 'app-category-add',
+  templateUrl: './category-add.component.html',
+  styleUrls: ['./category-add.component.scss'],
 })
-export class CategoriAddComponent {
+export class CategoryAddComponent {
   valueInput: string = '';
   setValue(e: any) {
     this.valueInput = e.target.value;

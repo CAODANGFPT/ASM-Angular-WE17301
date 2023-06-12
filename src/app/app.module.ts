@@ -17,9 +17,9 @@ import { ModelProductsOutstandingComponent } from './components/model-products-o
 import { ModelSupportComponent } from './components/model-support/model-support.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
-import { CategoriAddComponent } from './page/admin/categories/categori-add/categori-add.component';
-import { CategoriEditComponent } from './page/admin/categories/categori-edit/categori-edit.component';
-import { CategoriListComponent } from './page/admin/categories/categori-list/categori-list.component';
+import { CategoryAddComponent } from './page/admin/categories/category-add/category-add.component';
+import { CategoryEditComponent } from './page/admin/categories/category-edit/category-edit.component';
+import { CategoryListComponent } from './page/admin/categories/category-list/category-list.component';
 import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
@@ -66,9 +66,9 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
     ProductPageComponent,
     ProductDetailComponent,
     DetailNewsPageComponent,
-    CategoriListComponent,
-    CategoriAddComponent,
-    CategoriEditComponent,
+    CategoryListComponent,
+    CategoryAddComponent,
+    CategoryEditComponent,
     UserListComponent,
   ],
   imports: [

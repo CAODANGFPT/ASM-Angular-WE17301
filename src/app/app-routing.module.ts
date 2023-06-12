@@ -4,9 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
-import { CategoriAddComponent } from './page/admin/categories/categori-add/categori-add.component';
-import { CategoriEditComponent } from './page/admin/categories/categori-edit/categori-edit.component';
-import { CategoriListComponent } from './page/admin/categories/categori-list/categori-list.component';
+import { CategoryAddComponent } from './page/admin/categories/category-add/category-add.component';
+import { CategoryEditComponent } from './page/admin/categories/category-edit/category-edit.component';
+import { CategoryListComponent } from './page/admin/categories/category-list/category-list.component';
 import { DashboardComponent } from './page/admin/dashboard/dashboard.component';
 import { ProductAddComponent } from './page/admin/products/product-add/product-add.component';
 import { ProductEditComponent } from './page/admin/products/product-edit/product-edit.component';
@@ -53,9 +53,9 @@ const routes: Routes = [
       { path: 'products', component: ProductListComponent },
       { path: 'products/add', component: ProductAddComponent },
       { path: 'products/:id/edit', component: ProductEditComponent },
-      { path: 'categories', component: CategoriListComponent },
-      { path: 'categories/add', component: CategoriAddComponent },
-      { path: 'categories/:id/edit', component: CategoriEditComponent },
+      { path: 'categories', component: CategoryListComponent },
+      { path: 'categories/add', component: CategoryAddComponent },
+      { path: 'categories/:id/edit', component: CategoryEditComponent },
       { path: 'users', component: UserListComponent },
       { path: 'users/:id/edit', component: UserEditComponent },
     ],
