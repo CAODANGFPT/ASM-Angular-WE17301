@@ -18,7 +18,7 @@
       </tr>
     </thead>
     <tbody *ngIf="users && users.length">
-      <tr *ngFor="let user of users; index as i">
+      <tr *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: p, totalItems: totalLength}; index as i">
         <td>{{i +1}}</td>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>

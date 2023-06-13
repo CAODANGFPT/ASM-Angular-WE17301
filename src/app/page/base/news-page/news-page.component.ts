@@ -8,6 +8,8 @@ import { INews } from 'src/app/interfaces/News';
 })
 export class NewsPageComponent {
   cardNews: INews[] = [];
+  totalLength:any;
+  p: number = 1;
   constructor(private newsService: NewsService) {
     this.newsService.getNews().subscribe((data: any) => {
       for (let i = 0; i < data.data.length; i++) {
@@ -18,6 +20,7 @@ export class NewsPageComponent {
         data.data[i].date = formattedDate;
       }
       this.cardNews = data.data;
+      this.totalLength = data.data.length;
     });
   }
 }

@@ -10,7 +10,7 @@
     </div>
     <div class="news-main">
       <h1 class="news-main-title">tin tức</h1>
-      <div class="news-main-content" *ngFor="let cardItem of cardNews">
+      <div class="news-main-content" *ngFor="let cardItem of cardNews | paginate: { itemsPerPage: 5, currentPage: p, totalItems: totalLength}">
         <div class="news-main-content-img">
           <a href="" [routerLink]="['/news/', cardItem._id]">
             <img [src]="cardItem.image" alt="" />
@@ -40,6 +40,9 @@
             ></a>
           </div>
         </div>
+      </div>
+      <div class="pagination pagination-custom">
+        <app-custom-pagination (pageChange)="p = $event"></app-custom-pagination>
       </div>
     </div>
   </div>

@@ -20,7 +20,7 @@
       </tr>
     </thead>
     <tbody *ngIf="news && news.length">
-      <tr *ngFor="let news of news; index as i">
+      <tr *ngFor="let news of news | paginate: { itemsPerPage: 10, currentPage: p, totalItems: totalLength}; index as i">
         <td class="Id">{{ i + 1 }}</td>
         <td>{{news.name}}</td>
         <td>

@@ -28,7 +28,7 @@
             </select>
           </div>
           <div class="article">
-            <div *ngFor="let item of cardProducts" class="article-slider">
+            <div *ngFor="let item of cardProducts | paginate: { itemsPerPage: 12, currentPage: p, totalItems: totalLength}" class="article-slider">
               <div routerLink="{{item._id}}" class="image">
                 <img [src]="item.image" alt="" />
               </div>
@@ -53,6 +53,9 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="pagination pagination-custom">
+          <app-custom-pagination (pageChange)="p = $event"></app-custom-pagination>
         </div>
       </div>
     </div>
