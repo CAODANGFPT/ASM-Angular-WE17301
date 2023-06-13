@@ -83,13 +83,13 @@ export class ProductEditComponent {
         name: this.formProduct.get('name')?.value || '',
         image: this.formProduct.get('image')?.value || '',
         priceNew: this.formProduct.get('priceNew')?.value || 0,
-        priceOld: this.formProduct.get('priceOld')?.value || undefined,
+        priceOld: this.formProduct.get('priceOld')?.value || 0,
         quantity: this.formProduct.get('quantity')?.value || 0,
         description: this.formProduct.get('description')?.value || undefined,
         categoryId: this.formProduct.get('categoryId')?.value || '',
       };
       this.ProductService.updateProducts(product).subscribe((data) => {
-        alert('Thêm sản phẩm thành công');
+        alert('Sửa sản phẩm thành công');
         this.router.navigate(['/admin/products']);
       });
     }

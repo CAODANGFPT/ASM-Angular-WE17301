@@ -151,6 +151,8 @@ div {
               width: 370px;
             }
             &-slider {
+              @include Flex(flex, space-between, flex-start);
+              flex-direction: column;
               border: 1px solid $BrightGray;
               background-color: white;
               width: 100%;
@@ -177,6 +179,7 @@ div {
               }
               .price {
                 @include Flex(flex, space-between, center);
+                @include Gap(5px, 0);
                 background-color: white;
                 padding: 15px;
                 &-new {

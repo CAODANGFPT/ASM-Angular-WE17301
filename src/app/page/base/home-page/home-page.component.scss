@@ -130,6 +130,8 @@
             width: 370px;
           }
           &-slider {
+            @include Flex(flex,space-between, flex-start );
+            flex-direction: column;
             border: 1px solid $BrightGray;
             border-left: 0;
             width: 25%;
@@ -172,6 +174,7 @@
             }
             .price {
               @include Flex(flex, space-between, center);
+              @include Gap(5px, 0);
               padding: 15px;
               &-new {
                 @include Size(18px, 700, 20px);
@@ -249,6 +252,8 @@
             width: 370px;
           }
           &-slider {
+            @include Flex(flex,space-between, flex-start );
+            flex-direction: column;
             border: 1px solid $BrightGray;
             width: 100%;
             .image {
@@ -284,6 +289,7 @@
             }
             .price {
               @include Flex(flex, space-between, center);
+              @include Gap(5px, 0);
               padding: 15px;
               &-new {
                 @include Size(18px, 700, 20px);
