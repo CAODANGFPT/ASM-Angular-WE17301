@@ -14,8 +14,22 @@
         {{ product.name }}
       </h1>
       <div class="price">
-        <p class="price-sale">{{ product.priceNew }}</p>
-        <p class="price-origin">{{ product.priceOld }}</p>
+        <p class="price-sale">
+          {{
+            product.priceNew.toLocaleString("vi-VN", {
+              style: "currency",
+              currency: "VND"
+            })
+          }}
+        </p>
+        <p class="price-origin">
+          {{
+            product.priceOld?.toLocaleString("vi-VN", {
+              style: "currency",
+              currency: "VND"
+            })
+          }}
+        </p>
       </div>
       <div class="mota">
         <div>Mô tả:</div>
@@ -81,10 +95,7 @@
         <div *ngFor="let item of first10Products" class="article-slider">
           <div class="image">
             <a href="/products/{{ item._id }}">
-              <img
-                src="https://bizweb.dktcdn.net/thumb/large/100/091/132/products/5-min-a5bb63b5-5f5e-4109-ae48-b6f4e3c5a3aa.jpg?v=1468202641487"
-                alt=""
-              />
+              <img [src]="item.image" alt="" />
             </a>
             <div class="tag">New</div>
           </div>
@@ -92,8 +103,22 @@
             <a href="/products/{{ item._id }}">{{ item.name }}</a>
           </p>
           <div class="price">
-            <p class="price-new">{{ item.priceNew }}</p>
-            <p class="price-old">{{ item.priceOld }}</p>
+            <p class="price-new">
+              {{
+                item.priceNew.toLocaleString("vi-VN", {
+                  style: "currency",
+                  currency: "VND"
+                })
+              }}
+            </p>
+            <p class="price-old">
+              {{
+                item.priceOld?.toLocaleString("vi-VN", {
+                  style: "currency",
+                  currency: "VND"
+                })
+              }}
+            </p>
           </div>
         </div>
       </div>

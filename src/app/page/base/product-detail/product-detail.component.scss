@@ -109,18 +109,11 @@ div {
         &-origin {
           text-decoration: line-through;
           font-size: 1.14286em;
-          &::after{
-            content: "đ";
-          }
         }
         &-sale {
           font-size: 1.71429em;
           color: $CarminePink;
           font-weight: 600;
-          &::after{
-            content: "đ";
-            text-decoration: underline;
-          }
         }
       }
       .mota {
@@ -312,6 +305,8 @@ div {
           height: 340px;
         }
         &-slider {
+          @include Flex(flex,space-between, flex-start );
+          flex-direction: column;
           background-color: white;
           border: 1px solid $BrightGray;
           border-left: 0;
@@ -353,7 +348,7 @@ div {
             color: #333;
             margin: 0 15px;
             cursor: pointer;
-            a{
+            a {
               text-decoration: none;
               color: black;
               &:hover {
@@ -363,26 +358,17 @@ div {
           }
           .price {
             @include Flex(flex, space-between, center);
+            @include Gap(5px, 0);
             padding: 15px;
             background-color: white;
             &-new {
               @include Size(18px, 700, 20px);
               color: $CarminePink;
-              &::after {
-                content: "₫";
-                @include Size(18px, 700, 20px);
-                color: $CarminePink;
-              }
             }
             &-old {
               @include Size(16px, 400, 20px);
               text-decoration: line-through;
               color: #ababab;
-              &::after {
-                content: "₫";
-                @include Size(16px, 400, 20px);
-                color: #ababab;
-              }
             }
           }
         }
