@@ -8,10 +8,12 @@ import { IProduct } from 'src/app/interfaces/Product';
 })
 export class ProductPageComponent {
   cardProducts: IProduct[] = [];
+  totalLength:any;
+  p: number = 1;
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe((data: any) => {
       this.cardProducts = data.docs;
-      console.log(data.docs);
+      this.totalLength = data.docs.length;
     });
   }
 }

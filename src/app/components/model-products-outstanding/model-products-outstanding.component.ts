@@ -20,7 +20,6 @@ export class ModelProductsOutstandingComponent {
           return dateB.getTime() - dateA.getTime();
         });
         this.first4Products = this.productsNew.slice(0, 4);
-        console.log(this.first4Products);
       },
       (error) => console.log(error)
     );

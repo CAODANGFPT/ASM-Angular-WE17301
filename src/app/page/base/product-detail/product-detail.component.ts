@@ -27,7 +27,6 @@ export class ProductDetailComponent {
           return dateB.getTime() - dateA.getTime();
         });
         this.first10Products = this.productsNew.slice(0, 8);
-        console.log(this.first10Products);
       },
       (error) => console.log(error)
     );

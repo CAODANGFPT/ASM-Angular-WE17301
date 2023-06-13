@@ -18,7 +18,6 @@ export class ModelNewsComponent {
       'news' + this.news
     ) as HTMLInputElement;
     element.checked = true;
-    console.log(this.news);
   }
 
   public left() {
@@ -30,7 +29,6 @@ export class ModelNewsComponent {
       'news' + this.news
     ) as HTMLInputElement;
     element.checked = true;
-    console.log(this.news);
   }
 
   modelNews: INews[] = [];
@@ -47,14 +45,12 @@ export class ModelNewsComponent {
           data.data[i].date = formattedDate;
         }
         this.modelNews = data.data;
-        console.log(this.modelNews);
         this.modelNews.sort((a: any, b: any): any => {
           const dateA = new Date(a.createdAt);
           const dateB = new Date(b.createdAt);
           return dateB.getTime() - dateA.getTime();
         });
         this.first3News = this.modelNews.slice(0, 3);
-        console.log(this.first3News);
       },
       (error) => console.log(error)
     );

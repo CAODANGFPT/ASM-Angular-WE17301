@@ -31,7 +31,6 @@ export class HomePageComponent {
       'product' + this.product
     ) as HTMLInputElement;
     element.checked = true;
-    console.log(this.product);
   }
 
   public left() {
@@ -43,7 +42,6 @@ export class HomePageComponent {
       'product' + this.product
     ) as HTMLInputElement;
     element.checked = true;
-    console.log(this.product);
   }
 
   productsNew: IProduct[] = [];
@@ -61,7 +59,6 @@ export class HomePageComponent {
         });
         this.first8Products = this.productsNew.slice(0, 8);
         this.first12Products = this.productsNew.slice(0, 12);
-        console.log(this.first12Products);
       },
       (error) => console.log(error)
     );

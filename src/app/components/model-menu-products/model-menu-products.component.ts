@@ -11,7 +11,6 @@ export class ModelMenuProductsComponent {
   constructor(private categoryService: CategoryService) {
     this.categoryService.getCategory().subscribe((data: any) => {
       this.categories = data.data;
-      console.log(data);
     });
   }
 }
